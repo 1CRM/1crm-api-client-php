@@ -1,0 +1,23 @@
+{
+	"name": "onecrm/api",
+	"description" : "PHP library to access 1CRM REST API",
+	"keywords" : ["1crm", "crm",  "api",  "rest"],
+	"homepage" : "https://www.1crm.com/",
+	"license" : "MIT",
+	"authors" : [
+		{
+			"name": "Andrey Demenev",
+			"email": "andrey@1crm.com",
+			"role": "Developer"
+		}
+	],
+	"support" : {
+		"email": "support@1crm.com"
+	},
+	"autoload": {
+        "psr-4": { "OneCRM\\": "src/"}
+    },
+	"require": {
+		"guzzlehttp/guzzle": "~6.3"
+	}
+}
