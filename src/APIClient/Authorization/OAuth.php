@@ -5,7 +5,7 @@ use OneCRM\APIClient;
 
 class OAuth implements APIClient\Authorization {
 
-	private $token;
+	protected $token;
 
 	public function __construct(array $token) {
 		$this->token = $token;

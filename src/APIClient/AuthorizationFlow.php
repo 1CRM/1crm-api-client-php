@@ -4,8 +4,8 @@ namespace OneCRM\APIClient;
 
 class AuthorizationFlow {
 
-    private $url;
-    private $options;
+    protected $url;
+    protected $options;
 
     public function __construct($url, array $options = []) {
         $this->url = $url;
@@ -55,7 +55,7 @@ class AuthorizationFlow {
         }
     }
 
-    private function initAuthCode($auto_redirect) {
+    protected function initAuthCode($auto_redirect) {
         $url = $this->url . '/auth/' . $this->options['owner_type'] . '/authorize';
         $url .= '?' . http_build_query([
             'response_type' => 'code',
@@ -69,13 +69,13 @@ class AuthorizationFlow {
         return $url;
     }
 
-    private function validateResponseState($response) {
+    protected function validateResponseState($response) {
         if ( (isset($response['state']) ? $response['state'] : null) !== (isset($this->options['state']) ? $this->options['state'] : null) ) {
             throw new Error('Invalid state passed');
         }
     }
 
-    private function finalAuthCode($response) {
+    protected function finalAuthCode($response) {
         $this->validateResponseState($response);
         $client = new Client($this->url);
         $body = [

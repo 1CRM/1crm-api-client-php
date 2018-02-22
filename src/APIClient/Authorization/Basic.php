@@ -5,8 +5,8 @@ use OneCRM\APIClient;
 
 class Basic implements APIClient\Authorization {
 	
-	private $username;
-	private $password;
+	protected $username;
+	protected $password;
 
 	public function __construct($username, $password) {
 		$this->username = $username;

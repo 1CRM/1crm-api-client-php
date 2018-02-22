@@ -4,10 +4,10 @@ namespace OneCRM\APIClient;
 
 class Client {
 
-    private $url;
-    private $auth;
-    private $_calendar;
-    private $_files;
+    protected $url;
+    protected $auth;
+    protected $_calendar;
+    protected $_files;
 
     public function __construct($url, Authorization $auth = null) {
         $this->url = rtrim($url, '/') . '/';

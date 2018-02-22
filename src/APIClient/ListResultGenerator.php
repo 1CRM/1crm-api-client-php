@@ -4,10 +4,10 @@ namespace OneCRM\APIClient;
 
 class ListResultGenerator {
 
-    private $client;
-    private $endpoint;
-    private $query;
-    private $result;
+    protected $client;
+    protected $endpoint;
+    protected $query;
+    protected $result;
 
     public function __construct($client, $endpoint, $query, $result) {
         $this->endpoint = $endpoint;

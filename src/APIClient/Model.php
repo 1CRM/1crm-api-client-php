@@ -4,8 +4,8 @@ namespace OneCRM\APIClient;
 
 class Model {
 
-    private $client;
-    private $model_name;
+    protected $client;
+    protected $model_name;
 
     public function __construct(Client $client, $model_name) {
         $this->client = $client;

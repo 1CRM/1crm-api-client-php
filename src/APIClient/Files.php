@@ -4,7 +4,7 @@ namespace OneCRM\APIClient;
 
 class Files {
 
-    private $client;
+    protected $client;
 
     public function __construct(Client $client) {
         $this->client = $client;

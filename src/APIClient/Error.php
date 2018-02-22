@@ -4,8 +4,8 @@ namespace OneCRM\APIClient;
 
 class Error extends \Exception {
 
-    private $hint;
-    private $error_type;
+    protected $hint;
+    protected $error_type;
 
     public static function fromAPIResponse($code, $response) {
         if (is_array($response)) {
