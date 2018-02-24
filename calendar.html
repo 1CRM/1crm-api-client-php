@@ -98,14 +98,40 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"></div>
 <div class="line">$result = $calendar-&gt;events(<span class="stringliteral">&#39;2018-03-26 00:00:00&#39;</span>, <span class="stringliteral">&#39;2018-03-27 23:59:59&#39;</span>);</div>
 <div class="line">echo json_encode($result, JSON_PRETTY_PRINT);</div>
-</div><!-- fragment --><p>``` [ { "name": "Bad time, will call back", "date_start": "2018-03-26 06:45:00", "date_due": null, "location": null, "id": "3d5398a2-f209-a5d2-9cdb-5a8fc2d22297", "type": "Call" }, { "name": "Follow-up on proposal", "date_start": "2018-03-27 08:30:00", "date_due": null, "location": null, "id": "e73a50c1-6687-8a95-364d-5a8fc241ba18", "type": "Meeting" } ] ```</p>
-<p>You can limit returned event types by passing third argument to <a class="el" href="class_one_c_r_m_1_1_a_p_i_client_1_1_calendar.html#a7b2b3c116b4b31ee47fc0871c9ce78a4">Calendar::events()</a> method, with an array of desired event types. Supported types are <code>Call</code>, <code>Meeting</code>, <code>Task</code>, <code>ProjectTask</code></p>
+</div><!-- fragment --><div class="fragment"><div class="line">[</div>
+<div class="line">    {</div>
+<div class="line">        <span class="stringliteral">&quot;name&quot;</span>: <span class="stringliteral">&quot;Bad time, will call back&quot;</span>,</div>
+<div class="line">        <span class="stringliteral">&quot;date_start&quot;</span>: <span class="stringliteral">&quot;2018-03-26 06:45:00&quot;</span>,</div>
+<div class="line">        <span class="stringliteral">&quot;date_due&quot;</span>: null,</div>
+<div class="line">        <span class="stringliteral">&quot;location&quot;</span>: null,</div>
+<div class="line">        <span class="stringliteral">&quot;id&quot;</span>: <span class="stringliteral">&quot;3d5398a2-f209-a5d2-9cdb-5a8fc2d22297&quot;</span>,</div>
+<div class="line">        <span class="stringliteral">&quot;type&quot;</span>: <span class="stringliteral">&quot;Call&quot;</span></div>
+<div class="line">    },</div>
+<div class="line">    {</div>
+<div class="line">        <span class="stringliteral">&quot;name&quot;</span>: <span class="stringliteral">&quot;Follow-up on proposal&quot;</span>,</div>
+<div class="line">        <span class="stringliteral">&quot;date_start&quot;</span>: <span class="stringliteral">&quot;2018-03-27 08:30:00&quot;</span>,</div>
+<div class="line">        <span class="stringliteral">&quot;date_due&quot;</span>: null,</div>
+<div class="line">        <span class="stringliteral">&quot;location&quot;</span>: null,</div>
+<div class="line">        <span class="stringliteral">&quot;id&quot;</span>: <span class="stringliteral">&quot;e73a50c1-6687-8a95-364d-5a8fc241ba18&quot;</span>,</div>
+<div class="line">        <span class="stringliteral">&quot;type&quot;</span>: <span class="stringliteral">&quot;Meeting&quot;</span></div>
+<div class="line">    }</div>
+<div class="line">]</div>
+</div><!-- fragment --><p>You can limit returned event types by passing third argument to <a class="el" href="class_one_c_r_m_1_1_a_p_i_client_1_1_calendar.html#a7b2b3c116b4b31ee47fc0871c9ce78a4">Calendar::events()</a> method, with an array of desired event types. Supported types are <code>Call</code>, <code>Meeting</code>, <code>Task</code>, <code>ProjectTask</code></p>
 <div class="fragment"><div class="line">$calendar = $client-&gt;calendar();</div>
 <div class="line"></div>
 <div class="line">$result = $calendar-&gt;events(<span class="stringliteral">&#39;2018-03-26 00:00:00&#39;</span>, <span class="stringliteral">&#39;2018-03-27 23:59:59&#39;</span>, [<span class="stringliteral">&#39;Call&#39;</span>]);</div>
 <div class="line">echo json_encode($result, JSON_PRETTY_PRINT);</div>
-</div><!-- fragment --><p>``` [ { "name": "Bad time, will call back", "date_start": "2018-03-26 06:45:00", "date_due": null, "location": null, "id": "3d5398a2-f209-a5d2-9cdb-5a8fc2d22297", "type": "Call" } ] ``` </p>
-</div></div><!-- contents -->
+</div><!-- fragment --><div class="fragment"><div class="line">[</div>
+<div class="line">    {</div>
+<div class="line">        <span class="stringliteral">&quot;name&quot;</span>: <span class="stringliteral">&quot;Bad time, will call back&quot;</span>,</div>
+<div class="line">        <span class="stringliteral">&quot;date_start&quot;</span>: <span class="stringliteral">&quot;2018-03-26 06:45:00&quot;</span>,</div>
+<div class="line">        <span class="stringliteral">&quot;date_due&quot;</span>: null,</div>
+<div class="line">        <span class="stringliteral">&quot;location&quot;</span>: null,</div>
+<div class="line">        <span class="stringliteral">&quot;id&quot;</span>: <span class="stringliteral">&quot;3d5398a2-f209-a5d2-9cdb-5a8fc2d22297&quot;</span>,</div>
+<div class="line">        <span class="stringliteral">&quot;type&quot;</span>: <span class="stringliteral">&quot;Call&quot;</span></div>
+<div class="line">    }</div>
+<div class="line">]</div>
+</div><!-- fragment --> </div></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">

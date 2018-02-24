@@ -88,8 +88,40 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">$result = $model-&gt;getRelated(<span class="stringliteral">&#39;7eba2a01-6cb6-f38c-d4c2-5a8fc2def9d2&#39;</span>, <span class="stringliteral">&#39;accounts&#39;</span> [], 0, 2);</div>
 <div class="line">echo $result-&gt;totalResults(), <span class="stringliteral">&quot;\n&quot;</span>;</div>
 <div class="line">echo json_encode($result-&gt;getRecords(), JSON_PRETTY_PRINT);</div>
-</div><!-- fragment --><p>``` 2 [ { "balance": "3222.22", "balance_payable": "0", "is_supplier": "0", "credit_limit": null, "purchase_credit_limit": null, "currency_id": "-99", "id": "80ed9241-3612-f3cd-ee4d-5a8fc236c860", "credit_limit_usd": null, "currency": "US Dollar: $", "exchange_rate": "1", "purchase_credit_limit_usd": null, "name": "360 Vacations", "_display": "360 Vacations" }, { "balance": "0", "balance_payable": "0", "is_supplier": "0", "credit_limit": null, "purchase_credit_limit": null, "currency_id": "-99", "id": "94b8157d-aff9-023f-3745-5a8fc278192f", "credit_limit_usd": null, "currency": "US Dollar: $", "exchange_rate": "1", "purchase_credit_limit_usd": null, "name": "ABC FUEL CO", "_display": "ABC FUEL CO" } ] ```</p>
-<p><a class="el" href="class_one_c_r_m_1_1_a_p_i_client_1_1_model.html#a1eb5b0ea5b114ced69c3119a5b103abf">Model::getRelated()</a> accepts same options as <a class="el" href="class_one_c_r_m_1_1_a_p_i_client_1_1_model.html#ac072f1b8f50847752315ff9e7b538269">Model::getList()</a> - see <a class="el" href="data-list.html">Retrieving list of records</a> </p>
+</div><!-- fragment --><div class="fragment"><div class="line">2</div>
+<div class="line">[</div>
+<div class="line">    {</div>
+<div class="line">        <span class="stringliteral">&quot;balance&quot;</span>: <span class="stringliteral">&quot;3222.22&quot;</span>,</div>
+<div class="line">        <span class="stringliteral">&quot;balance_payable&quot;</span>: <span class="stringliteral">&quot;0&quot;</span>,</div>
+<div class="line">        <span class="stringliteral">&quot;is_supplier&quot;</span>: <span class="stringliteral">&quot;0&quot;</span>,</div>
+<div class="line">        <span class="stringliteral">&quot;credit_limit&quot;</span>: null,</div>
+<div class="line">        <span class="stringliteral">&quot;purchase_credit_limit&quot;</span>: null,</div>
+<div class="line">        <span class="stringliteral">&quot;currency_id&quot;</span>: <span class="stringliteral">&quot;-99&quot;</span>,</div>
+<div class="line">        <span class="stringliteral">&quot;id&quot;</span>: <span class="stringliteral">&quot;80ed9241-3612-f3cd-ee4d-5a8fc236c860&quot;</span>,</div>
+<div class="line">        <span class="stringliteral">&quot;credit_limit_usd&quot;</span>: null,</div>
+<div class="line">        <span class="stringliteral">&quot;currency&quot;</span>: <span class="stringliteral">&quot;US Dollar: $&quot;</span>,</div>
+<div class="line">        <span class="stringliteral">&quot;exchange_rate&quot;</span>: <span class="stringliteral">&quot;1&quot;</span>,</div>
+<div class="line">        <span class="stringliteral">&quot;purchase_credit_limit_usd&quot;</span>: null,</div>
+<div class="line">        <span class="stringliteral">&quot;name&quot;</span>: <span class="stringliteral">&quot;360 Vacations&quot;</span>,</div>
+<div class="line">        <span class="stringliteral">&quot;_display&quot;</span>: <span class="stringliteral">&quot;360 Vacations&quot;</span></div>
+<div class="line">    },</div>
+<div class="line">    {</div>
+<div class="line">        <span class="stringliteral">&quot;balance&quot;</span>: <span class="stringliteral">&quot;0&quot;</span>,</div>
+<div class="line">        <span class="stringliteral">&quot;balance_payable&quot;</span>: <span class="stringliteral">&quot;0&quot;</span>,</div>
+<div class="line">        <span class="stringliteral">&quot;is_supplier&quot;</span>: <span class="stringliteral">&quot;0&quot;</span>,</div>
+<div class="line">        <span class="stringliteral">&quot;credit_limit&quot;</span>: null,</div>
+<div class="line">        <span class="stringliteral">&quot;purchase_credit_limit&quot;</span>: null,</div>
+<div class="line">        <span class="stringliteral">&quot;currency_id&quot;</span>: <span class="stringliteral">&quot;-99&quot;</span>,</div>
+<div class="line">        <span class="stringliteral">&quot;id&quot;</span>: <span class="stringliteral">&quot;94b8157d-aff9-023f-3745-5a8fc278192f&quot;</span>,</div>
+<div class="line">        <span class="stringliteral">&quot;credit_limit_usd&quot;</span>: null,</div>
+<div class="line">        <span class="stringliteral">&quot;currency&quot;</span>: <span class="stringliteral">&quot;US Dollar: $&quot;</span>,</div>
+<div class="line">        <span class="stringliteral">&quot;exchange_rate&quot;</span>: <span class="stringliteral">&quot;1&quot;</span>,</div>
+<div class="line">        <span class="stringliteral">&quot;purchase_credit_limit_usd&quot;</span>: null,</div>
+<div class="line">        <span class="stringliteral">&quot;name&quot;</span>: <span class="stringliteral">&quot;ABC FUEL CO&quot;</span>,</div>
+<div class="line">        <span class="stringliteral">&quot;_display&quot;</span>: <span class="stringliteral">&quot;ABC FUEL CO&quot;</span></div>
+<div class="line">    }</div>
+<div class="line">]</div>
+</div><!-- fragment --><p><a class="el" href="class_one_c_r_m_1_1_a_p_i_client_1_1_model.html#a1eb5b0ea5b114ced69c3119a5b103abf">Model::getRelated()</a> accepts same options as <a class="el" href="class_one_c_r_m_1_1_a_p_i_client_1_1_model.html#ac072f1b8f50847752315ff9e7b538269">Model::getList()</a> - see <a class="el" href="data-list.html">Retrieving list of records</a> </p>
 </div></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

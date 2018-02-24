@@ -97,8 +97,28 @@ Requests with arbitrary HTTP method</h1>
 <div class="line">$client = <span class="keyword">new</span> APIClient\Client(<span class="stringliteral">&#39;https://demo.1crmcloud.com/api.php&#39;</span>, $auth);</div>
 <div class="line">$result = $client-&gt;request(<span class="stringliteral">&#39;GET&#39;</span>, <span class="stringliteral">&#39;/data/Contact&#39;</span>, [<span class="stringliteral">&#39;query&#39;</span> =&gt; [<span class="stringliteral">&#39;limit&#39;</span> =&gt; 2]]);</div>
 <div class="line">echo json_encode($result, JSON_PRETTY_PRINT);</div>
-</div><!-- fragment --><p>``` { "records": [ { "name": "Kristina Abramowitz", "first_name": "Kristina", "id": "7eba2a01-6cb6-f38c-d4c2-5a8fc2def9d2", "last_name": "Abramowitz", "salutation": null, "_display": "Kristina Abramowitz" }, { "name": "Garret Alejo", "first_name": "Garret", "id": "346ba8d2-2851-166b-13e6-5a8fc2c18299", "last_name": "Alejo", "salutation": null, "_display": "Garret Alejo" } ], "total_results": 200 } ```</p>
-<p>In this example, we send a GET request to <code>/data/Contact</code> endpoint that returns a list of Contact records, and add <code>limit</code> parameter to return no more than 2 results.</p>
+</div><!-- fragment --><div class="fragment"><div class="line">{</div>
+<div class="line">    <span class="stringliteral">&quot;records&quot;</span>: [</div>
+<div class="line">        {</div>
+<div class="line">            <span class="stringliteral">&quot;name&quot;</span>: <span class="stringliteral">&quot;Kristina Abramowitz&quot;</span>,</div>
+<div class="line">            <span class="stringliteral">&quot;first_name&quot;</span>: <span class="stringliteral">&quot;Kristina&quot;</span>,</div>
+<div class="line">            <span class="stringliteral">&quot;id&quot;</span>: <span class="stringliteral">&quot;7eba2a01-6cb6-f38c-d4c2-5a8fc2def9d2&quot;</span>,</div>
+<div class="line">            <span class="stringliteral">&quot;last_name&quot;</span>: <span class="stringliteral">&quot;Abramowitz&quot;</span>,</div>
+<div class="line">            <span class="stringliteral">&quot;salutation&quot;</span>: null,</div>
+<div class="line">            <span class="stringliteral">&quot;_display&quot;</span>: <span class="stringliteral">&quot;Kristina Abramowitz&quot;</span></div>
+<div class="line">        },</div>
+<div class="line">        {</div>
+<div class="line">            <span class="stringliteral">&quot;name&quot;</span>: <span class="stringliteral">&quot;Garret Alejo&quot;</span>,</div>
+<div class="line">            <span class="stringliteral">&quot;first_name&quot;</span>: <span class="stringliteral">&quot;Garret&quot;</span>,</div>
+<div class="line">            <span class="stringliteral">&quot;id&quot;</span>: <span class="stringliteral">&quot;346ba8d2-2851-166b-13e6-5a8fc2c18299&quot;</span>,</div>
+<div class="line">            <span class="stringliteral">&quot;last_name&quot;</span>: <span class="stringliteral">&quot;Alejo&quot;</span>,</div>
+<div class="line">            <span class="stringliteral">&quot;salutation&quot;</span>: null,</div>
+<div class="line">            <span class="stringliteral">&quot;_display&quot;</span>: <span class="stringliteral">&quot;Garret Alejo&quot;</span></div>
+<div class="line">        }</div>
+<div class="line">    ],</div>
+<div class="line">    <span class="stringliteral">&quot;total_results&quot;</span>: 200</div>
+<div class="line">}</div>
+</div><!-- fragment --><p>In this example, we send a GET request to <code>/data/Contact</code> endpoint that returns a list of Contact records, and add <code>limit</code> parameter to return no more than 2 results.</p>
 <h2>Example: sending POST request</h2>
 <div class="fragment"><div class="line">use OneCRM\APIClient;</div>
 <div class="line">use <a class="code" href="interface_one_c_r_m_1_1_a_p_i_client_1_1_authentication.html">OneCRM\APIClient\Authentication</a>;</div>
@@ -110,8 +130,10 @@ Requests with arbitrary HTTP method</h1>
 <div class="line">    <span class="stringliteral">&#39;json&#39;</span> =&gt; [<span class="stringliteral">&#39;data&#39;</span> =&gt; [<span class="stringliteral">&#39;first_name&#39;</span> =&gt; <span class="stringliteral">&#39;Andrey&#39;</span>, <span class="stringliteral">&#39;last_name&#39;</span> =&gt; <span class="stringliteral">&#39;Demenev&#39;</span>]]</div>
 <div class="line">]);</div>
 <div class="line">echo json_encode($result, JSON_PRETTY_PRINT);</div>
-</div><!-- fragment --><p>``` { "id": "ab05b916-be4c-3b08-1464-5a90e5f5dc5d" } ```</p>
-<p>In this example, we send a POST request to <code>/data/Contact</code> endpoint that creates a new Contact record.</p>
+</div><!-- fragment --><div class="fragment"><div class="line">{</div>
+<div class="line">    <span class="stringliteral">&quot;id&quot;</span>: <span class="stringliteral">&quot;ab05b916-be4c-3b08-1464-5a90e5f5dc5d&quot;</span></div>
+<div class="line">}</div>
+</div><!-- fragment --><p>In this example, we send a POST request to <code>/data/Contact</code> endpoint that creates a new Contact record.</p>
 <h2>Example: sending PATCH request</h2>
 <div class="fragment"><div class="line">use OneCRM\APIClient;</div>
 <div class="line">use <a class="code" href="interface_one_c_r_m_1_1_a_p_i_client_1_1_authentication.html">OneCRM\APIClient\Authentication</a>;</div>
@@ -123,8 +145,10 @@ Requests with arbitrary HTTP method</h1>
 <div class="line">    <span class="stringliteral">&#39;json&#39;</span> =&gt; [<span class="stringliteral">&#39;data&#39;</span> =&gt; [<span class="stringliteral">&#39;email1&#39;</span> =&gt; <span class="stringliteral">&#39;andrey@1crm.com&#39;</span>]]</div>
 <div class="line">]);</div>
 <div class="line">echo json_encode($result, JSON_PRETTY_PRINT);</div>
-</div><!-- fragment --><p>``` { "result": true } ```</p>
-<p>In this example, we send a POST request to <code>/data/Contact/:id</code> endpoint that updates a Contact record.</p>
+</div><!-- fragment --><div class="fragment"><div class="line">{</div>
+<div class="line">    <span class="stringliteral">&quot;result&quot;</span>: <span class="keyword">true</span></div>
+<div class="line">}</div>
+</div><!-- fragment --><p>In this example, we send a POST request to <code>/data/Contact/:id</code> endpoint that updates a Contact record.</p>
 <h2>Example: sending DELETE request</h2>
 <div class="fragment"><div class="line">use OneCRM\APIClient;</div>
 <div class="line">use <a class="code" href="interface_one_c_r_m_1_1_a_p_i_client_1_1_authentication.html">OneCRM\APIClient\Authentication</a>;</div>
@@ -134,8 +158,10 @@ Requests with arbitrary HTTP method</h1>
 <div class="line">$client = <span class="keyword">new</span> APIClient\Client(<span class="stringliteral">&#39;https://demo.1crmcloud.com/api.php&#39;</span>, $auth);</div>
 <div class="line">$result = $client-&gt;request(<span class="stringliteral">&#39;DELETE&#39;</span>, <span class="stringliteral">&#39;/data/Contact/ab05b916-be4c-3b08-1464-5a90e5f5dc5d&#39;</span>);</div>
 <div class="line">echo json_encode($result, JSON_PRETTY_PRINT);</div>
-</div><!-- fragment --><p>``` { "result": true } ```</p>
-<p>In this example, we send a DELETE request to <code>/data/Contact/:id</code> endpoint that deletes a Contact record.</p>
+</div><!-- fragment --><div class="fragment"><div class="line">{</div>
+<div class="line">    <span class="stringliteral">&quot;result&quot;</span>: <span class="keyword">true</span></div>
+<div class="line">}</div>
+</div><!-- fragment --><p>In this example, we send a DELETE request to <code>/data/Contact/:id</code> endpoint that deletes a Contact record.</p>
 <h1><a class="anchor" id="get"></a>
 GET</h1>
 <p><a class="el" href="class_one_c_r_m_1_1_a_p_i_client_1_1_client.html#add03ceca4667788e2998415915dff955">OneCRM</a>( "Client::get") is a shortcut method for sending a GET request.</p>
@@ -148,8 +174,28 @@ GET</h1>
 <div class="line">$client = <span class="keyword">new</span> APIClient\Client(<span class="stringliteral">&#39;https://demo.1crmcloud.com/api.php&#39;</span>, $auth);</div>
 <div class="line">$result = $client-&gt;get(<span class="stringliteral">&#39;/data/Contact&#39;</span>, [<span class="stringliteral">&#39;limit&#39;</span> =&gt; 2]);</div>
 <div class="line">echo json_encode($result, JSON_PRETTY_PRINT);</div>
-</div><!-- fragment --><p>``` { "records": [ { "name": "Kristina Abramowitz", "first_name": "Kristina", "id": "7eba2a01-6cb6-f38c-d4c2-5a8fc2def9d2", "last_name": "Abramowitz", "salutation": null, "_display": "Kristina Abramowitz" }, { "name": "Garret Alejo", "first_name": "Garret", "id": "346ba8d2-2851-166b-13e6-5a8fc2c18299", "last_name": "Alejo", "salutation": null, "_display": "Garret Alejo" } ], "total_results": 200 } ```</p>
-<h1><a class="anchor" id="post"></a>
+</div><!-- fragment --><div class="fragment"><div class="line">{</div>
+<div class="line">    <span class="stringliteral">&quot;records&quot;</span>: [</div>
+<div class="line">        {</div>
+<div class="line">            <span class="stringliteral">&quot;name&quot;</span>: <span class="stringliteral">&quot;Kristina Abramowitz&quot;</span>,</div>
+<div class="line">            <span class="stringliteral">&quot;first_name&quot;</span>: <span class="stringliteral">&quot;Kristina&quot;</span>,</div>
+<div class="line">            <span class="stringliteral">&quot;id&quot;</span>: <span class="stringliteral">&quot;7eba2a01-6cb6-f38c-d4c2-5a8fc2def9d2&quot;</span>,</div>
+<div class="line">            <span class="stringliteral">&quot;last_name&quot;</span>: <span class="stringliteral">&quot;Abramowitz&quot;</span>,</div>
+<div class="line">            <span class="stringliteral">&quot;salutation&quot;</span>: null,</div>
+<div class="line">            <span class="stringliteral">&quot;_display&quot;</span>: <span class="stringliteral">&quot;Kristina Abramowitz&quot;</span></div>
+<div class="line">        },</div>
+<div class="line">        {</div>
+<div class="line">            <span class="stringliteral">&quot;name&quot;</span>: <span class="stringliteral">&quot;Garret Alejo&quot;</span>,</div>
+<div class="line">            <span class="stringliteral">&quot;first_name&quot;</span>: <span class="stringliteral">&quot;Garret&quot;</span>,</div>
+<div class="line">            <span class="stringliteral">&quot;id&quot;</span>: <span class="stringliteral">&quot;346ba8d2-2851-166b-13e6-5a8fc2c18299&quot;</span>,</div>
+<div class="line">            <span class="stringliteral">&quot;last_name&quot;</span>: <span class="stringliteral">&quot;Alejo&quot;</span>,</div>
+<div class="line">            <span class="stringliteral">&quot;salutation&quot;</span>: null,</div>
+<div class="line">            <span class="stringliteral">&quot;_display&quot;</span>: <span class="stringliteral">&quot;Garret Alejo&quot;</span></div>
+<div class="line">        }</div>
+<div class="line">    ],</div>
+<div class="line">    <span class="stringliteral">&quot;total_results&quot;</span>: 200</div>
+<div class="line">}</div>
+</div><!-- fragment --><h1><a class="anchor" id="post"></a>
 POST</h1>
 <p><a class="el" href="class_one_c_r_m_1_1_a_p_i_client_1_1_client.html#a68ae60b388e4d0bf0f9601b7bba9ec21">OneCRM<dl class="section post"><dt>Postcondition</dt><dd></dd></dl>
 </a>( "Client::post") is a shortcut method for sending a POST request.</p>
@@ -162,8 +208,10 @@ POST</h1>
 <div class="line">$client = <span class="keyword">new</span> APIClient\Client(<span class="stringliteral">&#39;https://demo.1crmcloud.com/api.php&#39;</span>, $auth);</div>
 <div class="line">$result = $client-&gt;post(<span class="stringliteral">&#39;/data/Contact&#39;</span>, [<span class="stringliteral">&#39;data&#39;</span> =&gt; [<span class="stringliteral">&#39;first_name&#39;</span> =&gt; <span class="stringliteral">&#39;Andrey&#39;</span>, <span class="stringliteral">&#39;last_name&#39;</span> =&gt; <span class="stringliteral">&#39;Demenev&#39;</span>]]);</div>
 <div class="line">echo json_encode($result, JSON_PRETTY_PRINT);</div>
-</div><!-- fragment --><p>``` { "id": "ab05b916-be4c-3b08-1464-5a90e5f5dc5d" } ```</p>
-<h1><a class="anchor" id="patch"></a>
+</div><!-- fragment --><div class="fragment"><div class="line">{</div>
+<div class="line">    <span class="stringliteral">&quot;id&quot;</span>: <span class="stringliteral">&quot;ab05b916-be4c-3b08-1464-5a90e5f5dc5d&quot;</span></div>
+<div class="line">}</div>
+</div><!-- fragment --><h1><a class="anchor" id="patch"></a>
 PATCH</h1>
 <p><a class="el" href="class_one_c_r_m_1_1_a_p_i_client_1_1_client.html#ad227fa7f91251e556c620d590eba3a06">OneCRM</a>( "Client::patch") is a shortcut method for sending a PATCH request.</p>
 <p>The above example for PATCH request can be rewritten as follows:</p>
@@ -177,8 +225,10 @@ PATCH</h1>
 <div class="line">    <span class="stringliteral">&#39;data&#39;</span> =&gt; [<span class="stringliteral">&#39;email1&#39;</span> =&gt; <span class="stringliteral">&#39;andrey@1crm.com&#39;</span>]</div>
 <div class="line">]);</div>
 <div class="line">echo json_encode($result, JSON_PRETTY_PRINT);</div>
-</div><!-- fragment --><p>``` { "result": true } ```</p>
-<h1><a class="anchor" id="delete"></a>
+</div><!-- fragment --><div class="fragment"><div class="line">{</div>
+<div class="line">    <span class="stringliteral">&quot;result&quot;</span>: <span class="keyword">true</span></div>
+<div class="line">}</div>
+</div><!-- fragment --><h1><a class="anchor" id="delete"></a>
 DELETE</h1>
 <p><a class="el" href="class_one_c_r_m_1_1_a_p_i_client_1_1_client.html#a4e47ece0cc7c980c4354fb88641adbf8">OneCRM</a>( "Client::delete") is a shortcut method for sending a DELETE request.</p>
 <p>The above example for DELETE request can be rewritten as follows:</p>
@@ -190,8 +240,10 @@ DELETE</h1>
 <div class="line">$client = <span class="keyword">new</span> APIClient\Client(<span class="stringliteral">&#39;https://demo.1crmcloud.com/api.php&#39;</span>, $auth);</div>
 <div class="line">$result = $client-&gt;delete(<span class="stringliteral">&#39;/data/Contact/ab05b916-be4c-3b08-1464-5a90e5f5dc5d&#39;</span>);</div>
 <div class="line">echo json_encode($result, JSON_PRETTY_PRINT);</div>
-</div><!-- fragment --><p>``` { "result": true } ``` </p>
-</div></div><!-- contents -->
+</div><!-- fragment --><div class="fragment"><div class="line">{</div>
+<div class="line">    <span class="stringliteral">&quot;result&quot;</span>: <span class="keyword">true</span></div>
+<div class="line">}</div>
+</div><!-- fragment --> </div></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">

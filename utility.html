@@ -91,8 +91,16 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">$auth = <span class="keyword">new</span> Authentication\OAuth($token);</div>
 <div class="line">$client = <span class="keyword">new</span> APIClient\Client(<span class="stringliteral">&#39;https://demo.1crmcloud.com/api.php&#39;</span>, $auth);</div>
 <div class="line">echo json_encode($client-&gt;me(), JSON_PRETTY_PRINT);</div>
-</div><!-- fragment --><p>``` { "id": "Users:1", "name": null, "first_name": null, "last_name": "Administrator", "role": "user", "groups": [], "email": null } ```</p>
-<h3>1CRM server version</h3>
+</div><!-- fragment --><div class="fragment"><div class="line">{</div>
+<div class="line">    <span class="stringliteral">&quot;id&quot;</span>: <span class="stringliteral">&quot;Users:1&quot;</span>,</div>
+<div class="line">    <span class="stringliteral">&quot;name&quot;</span>: null,</div>
+<div class="line">    <span class="stringliteral">&quot;first_name&quot;</span>: null,</div>
+<div class="line">    <span class="stringliteral">&quot;last_name&quot;</span>: <span class="stringliteral">&quot;Administrator&quot;</span>,</div>
+<div class="line">    <span class="stringliteral">&quot;role&quot;</span>: <span class="stringliteral">&quot;user&quot;</span>,</div>
+<div class="line">    <span class="stringliteral">&quot;groups&quot;</span>: [],</div>
+<div class="line">    <span class="stringliteral">&quot;email&quot;</span>: null</div>
+<div class="line">}</div>
+</div><!-- fragment --><h3>1CRM server version</h3>
 <div class="fragment"><div class="line">use OneCRM\APIClient;</div>
 <div class="line">use <a class="code" href="interface_one_c_r_m_1_1_a_p_i_client_1_1_authentication.html">OneCRM\APIClient\Authentication</a>;</div>
 <div class="line"></div>
@@ -100,15 +108,27 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">$auth = <span class="keyword">new</span> Authentication\OAuth($token);</div>
 <div class="line">$client = <span class="keyword">new</span> APIClient\Client(<span class="stringliteral">&#39;https://demo.1crmcloud.com/api.php&#39;</span>, $auth);</div>
 <div class="line">echo json_encode($client-&gt;serverVersion(), JSON_PRETTY_PRINT);</div>
-</div><!-- fragment --><p>``` { "version": "8.5.0", "authenticated": true, "products": [ "enterprise" ] } ```</p>
-<p>This method can be called without authentication:</p>
+</div><!-- fragment --><div class="fragment"><div class="line">{</div>
+<div class="line">    <span class="stringliteral">&quot;version&quot;</span>: <span class="stringliteral">&quot;8.5.0&quot;</span>,</div>
+<div class="line">    <span class="stringliteral">&quot;authenticated&quot;</span>: <span class="keyword">true</span>,</div>
+<div class="line">    <span class="stringliteral">&quot;products&quot;</span>: [</div>
+<div class="line">        <span class="stringliteral">&quot;enterprise&quot;</span></div>
+<div class="line">    ]</div>
+<div class="line">}</div>
+</div><!-- fragment --><p>This method can be called without authentication:</p>
 <div class="fragment"><div class="line">use OneCRM\APIClient;</div>
 <div class="line">use <a class="code" href="interface_one_c_r_m_1_1_a_p_i_client_1_1_authentication.html">OneCRM\APIClient\Authentication</a>;</div>
 <div class="line"></div>
 <div class="line">$client = <span class="keyword">new</span> APIClient\Client(<span class="stringliteral">&#39;https://demo.1crmcloud.com/api.php&#39;</span>);</div>
 <div class="line">echo json_encode($client-&gt;serverVersion(), JSON_PRETTY_PRINT);</div>
-</div><!-- fragment --><p>``` { "version": "8.5.0", "authenticated": false, "products": [ "enterprise" ] } ```</p>
-<h3>Get 1CRM API server public key:</h3>
+</div><!-- fragment --><div class="fragment"><div class="line">{</div>
+<div class="line">    <span class="stringliteral">&quot;version&quot;</span>: <span class="stringliteral">&quot;8.5.0&quot;</span>,</div>
+<div class="line">    <span class="stringliteral">&quot;authenticated&quot;</span>: <span class="keyword">false</span>,</div>
+<div class="line">    <span class="stringliteral">&quot;products&quot;</span>: [</div>
+<div class="line">        <span class="stringliteral">&quot;enterprise&quot;</span></div>
+<div class="line">    ]</div>
+<div class="line">}</div>
+</div><!-- fragment --><h3>Get 1CRM API server public key:</h3>
 <div class="fragment"><div class="line">use OneCRM\APIClient;</div>
 <div class="line">use <a class="code" href="interface_one_c_r_m_1_1_a_p_i_client_1_1_authentication.html">OneCRM\APIClient\Authentication</a>;</div>
 <div class="line"></div>
@@ -116,17 +136,41 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">$auth = <span class="keyword">new</span> Authentication\OAuth($token);</div>
 <div class="line">$client = <span class="keyword">new</span> APIClient\Client(<span class="stringliteral">&#39;https://demo.1crmcloud.com/api.php&#39;</span>, $auth);</div>
 <div class="line">echo $client-&gt;serverKey();</div>
-</div><!-- fragment --><p>``` --&mdash;BEGIN PUBLIC KEY--&mdash; MIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEA4KcMj6As8IE5VvgE8IGm X+nQC4smrw5BG3QzJAf735RFkHXnGb1CbeE1WHLCol8Hm+u2VphHRLjNW8x7/T+S QyiBsGY0RZl1fdRG5MKeAPH6z2zPs84p45h1pyitzMHdr0g8fXiNc6qSJ6cCC188 oqx/owTFPdBhciie7avn6JX6HcT9FXdO8GLW4hDQWM2GPMrw9JwJR06zRKI7dyur RBRAvcX1daUb/w6/N+n+f12iPaKiizOUPTW8Pp3a19NnW+Cg83WhWHF1fcoM6aJ2 2zwJwi1Mg4HEbU7hT5VE5Qc57q0akboLZYDOuOI0g3q13HjJwhxl8OslCP6ukbIQ NNcxFukflpaGjffPYqvCahEc5UW4woaacdFidP9D13UhGS5tMxS2iOzJxmzgL2cG bgDocuTFfIxKP3H0EdTeJApGBGNozN0U8s8WqXCgKtlHXGgwJx5VEgdO7kKkk9R4 /XMxheojLObYOS1UygX0kHbW/XyV+zAztjHN4Y9RRVkE06IDHwqR6EqyuRuiCLJY OUFCO0O8cz/QjvzdpfmF2mb9E6Be6ov7jr5l7i6o2b5EkrcvpD41NZwGArscJu3P 3LEL94V+SQ34ck1Vkdg0Y1LUkBrvEjeh9wgBTOQpVmvZfnjtmxbVLFXRFUfqVQ3X 4LsEpFI2Bc9fZIsrnJ8nr8sCAwEAAQ== --&mdash;END PUBLIC KEY--&mdash;</p>
-<p>```</p>
-<p>This method does not require authentication:</p>
+</div><!-- fragment --><div class="fragment"><div class="line">-----BEGIN PUBLIC KEY-----</div>
+<div class="line">MIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEA4KcMj6As8IE5VvgE8IGm</div>
+<div class="line">X+nQC4smrw5BG3QzJAf735RFkHXnGb1CbeE1WHLCol8Hm+u2VphHRLjNW8x7/T+S</div>
+<div class="line">QyiBsGY0RZl1fdRG5MKeAPH6z2zPs84p45h1pyitzMHdr0g8fXiNc6qSJ6cCC188</div>
+<div class="line">oqx/owTFPdBhciie7avn6JX6HcT9FXdO8GLW4hDQWM2GPMrw9JwJR06zRKI7dyur</div>
+<div class="line">RBRAvcX1daUb/w6/N+n+f12iPaKiizOUPTW8Pp3a19NnW+Cg83WhWHF1fcoM6aJ2</div>
+<div class="line">2zwJwi1Mg4HEbU7hT5VE5Qc57q0akboLZYDOuOI0g3q13HjJwhxl8OslCP6ukbIQ</div>
+<div class="line">NNcxFukflpaGjffPYqvCahEc5UW4woaacdFidP9D13UhGS5tMxS2iOzJxmzgL2cG</div>
+<div class="line">bgDocuTFfIxKP3H0EdTeJApGBGNozN0U8s8WqXCgKtlHXGgwJx5VEgdO7kKkk9R4</div>
+<div class="line">/XMxheojLObYOS1UygX0kHbW/XyV+zAztjHN4Y9RRVkE06IDHwqR6EqyuRuiCLJY</div>
+<div class="line">OUFCO0O8cz/QjvzdpfmF2mb9E6Be6ov7jr5l7i6o2b5EkrcvpD41NZwGArscJu3P</div>
+<div class="line">3LEL94V+SQ34ck1Vkdg0Y1LUkBrvEjeh9wgBTOQpVmvZfnjtmxbVLFXRFUfqVQ3X</div>
+<div class="line">4LsEpFI2Bc9fZIsrnJ8nr8sCAwEAAQ==</div>
+<div class="line">-----END PUBLIC KEY-----</div>
+</div><!-- fragment --><p>This method does not require authentication:</p>
 <div class="fragment"><div class="line">use OneCRM\APIClient;</div>
 <div class="line">use <a class="code" href="interface_one_c_r_m_1_1_a_p_i_client_1_1_authentication.html">OneCRM\APIClient\Authentication</a>;</div>
 <div class="line"></div>
 <div class="line">$client = <span class="keyword">new</span> APIClient\Client(<span class="stringliteral">&#39;https://demo.1crmcloud.com/api.php&#39;</span>);</div>
 <div class="line">echo $client-&gt;serverKey();</div>
-</div><!-- fragment --><p>``` --&mdash;BEGIN PUBLIC KEY--&mdash; MIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEA4KcMj6As8IE5VvgE8IGm X+nQC4smrw5BG3QzJAf735RFkHXnGb1CbeE1WHLCol8Hm+u2VphHRLjNW8x7/T+S QyiBsGY0RZl1fdRG5MKeAPH6z2zPs84p45h1pyitzMHdr0g8fXiNc6qSJ6cCC188 oqx/owTFPdBhciie7avn6JX6HcT9FXdO8GLW4hDQWM2GPMrw9JwJR06zRKI7dyur RBRAvcX1daUb/w6/N+n+f12iPaKiizOUPTW8Pp3a19NnW+Cg83WhWHF1fcoM6aJ2 2zwJwi1Mg4HEbU7hT5VE5Qc57q0akboLZYDOuOI0g3q13HjJwhxl8OslCP6ukbIQ NNcxFukflpaGjffPYqvCahEc5UW4woaacdFidP9D13UhGS5tMxS2iOzJxmzgL2cG bgDocuTFfIxKP3H0EdTeJApGBGNozN0U8s8WqXCgKtlHXGgwJx5VEgdO7kKkk9R4 /XMxheojLObYOS1UygX0kHbW/XyV+zAztjHN4Y9RRVkE06IDHwqR6EqyuRuiCLJY OUFCO0O8cz/QjvzdpfmF2mb9E6Be6ov7jr5l7i6o2b5EkrcvpD41NZwGArscJu3P 3LEL94V+SQ34ck1Vkdg0Y1LUkBrvEjeh9wgBTOQpVmvZfnjtmxbVLFXRFUfqVQ3X 4LsEpFI2Bc9fZIsrnJ8nr8sCAwEAAQ== --&mdash;END PUBLIC KEY--&mdash;</p>
-<p>``` </p>
-</div></div><!-- contents -->
+</div><!-- fragment --><div class="fragment"><div class="line">-----BEGIN PUBLIC KEY-----</div>
+<div class="line">MIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEA4KcMj6As8IE5VvgE8IGm</div>
+<div class="line">X+nQC4smrw5BG3QzJAf735RFkHXnGb1CbeE1WHLCol8Hm+u2VphHRLjNW8x7/T+S</div>
+<div class="line">QyiBsGY0RZl1fdRG5MKeAPH6z2zPs84p45h1pyitzMHdr0g8fXiNc6qSJ6cCC188</div>
+<div class="line">oqx/owTFPdBhciie7avn6JX6HcT9FXdO8GLW4hDQWM2GPMrw9JwJR06zRKI7dyur</div>
+<div class="line">RBRAvcX1daUb/w6/N+n+f12iPaKiizOUPTW8Pp3a19NnW+Cg83WhWHF1fcoM6aJ2</div>
+<div class="line">2zwJwi1Mg4HEbU7hT5VE5Qc57q0akboLZYDOuOI0g3q13HjJwhxl8OslCP6ukbIQ</div>
+<div class="line">NNcxFukflpaGjffPYqvCahEc5UW4woaacdFidP9D13UhGS5tMxS2iOzJxmzgL2cG</div>
+<div class="line">bgDocuTFfIxKP3H0EdTeJApGBGNozN0U8s8WqXCgKtlHXGgwJx5VEgdO7kKkk9R4</div>
+<div class="line">/XMxheojLObYOS1UygX0kHbW/XyV+zAztjHN4Y9RRVkE06IDHwqR6EqyuRuiCLJY</div>
+<div class="line">OUFCO0O8cz/QjvzdpfmF2mb9E6Be6ov7jr5l7i6o2b5EkrcvpD41NZwGArscJu3P</div>
+<div class="line">3LEL94V+SQ34ck1Vkdg0Y1LUkBrvEjeh9wgBTOQpVmvZfnjtmxbVLFXRFUfqVQ3X</div>
+<div class="line">4LsEpFI2Bc9fZIsrnJ8nr8sCAwEAAQ==</div>
+<div class="line">-----END PUBLIC KEY-----</div>
+</div><!-- fragment --> </div></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">
