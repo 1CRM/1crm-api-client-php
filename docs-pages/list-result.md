@@ -18,10 +18,10 @@ echo $result->totalResults(), "\n";
 echo count($result->getRecords()), "\n";
 ~~~~~~~~~~~~~
 
-```
+~~~~~~~~~~~~~
 200
 5
-```
+~~~~~~~~~~~~~
 
 Although only 5 results were returned as we requested, we see that there is additional
 data available. If you want to iterate over all results, and not a limited subset, you will 
@@ -52,8 +52,8 @@ foreach ($result->generator() as $record) {
 echo "We iterated over ", $iteratedCount, " results\n";
 ~~~~~~~~~~~~~
 
-```
+~~~~~~~~~~~~~
 Call to getList() returned 50 results
 In total, there are 203 matching results
 We iterated over 203 results
-```
+~~~~~~~~~~~~~

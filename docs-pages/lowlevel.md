@@ -27,7 +27,7 @@ $result = $client->request('GET', '/data/Contact', ['query' => ['limit' => 2]]);
 echo json_encode($result, JSON_PRETTY_PRINT);
 ~~~~~~~~~~~~~
 
-```
+~~~~~~~~~~~~~
 {
     "records": [
         {
@@ -49,7 +49,7 @@ echo json_encode($result, JSON_PRETTY_PRINT);
     ],
     "total_results": 200
 }
-```
+~~~~~~~~~~~~~
 
 In this example, we send a GET request to `/data/Contact` endpoint that returns
 a list of Contact records, and add `limit` parameter to return no more than 2
@@ -70,11 +70,11 @@ $result = $client->request('POST', '/data/Contact', [
 echo json_encode($result, JSON_PRETTY_PRINT);
 ~~~~~~~~~~~~~
 
-```
+~~~~~~~~~~~~~
 {
     "id": "ab05b916-be4c-3b08-1464-5a90e5f5dc5d"
 }
-```
+~~~~~~~~~~~~~
 
 In this example, we send a POST request to `/data/Contact` endpoint that creates
 a new Contact record.
@@ -94,11 +94,11 @@ $result = $client->request('PATCH', '/data/Contact/ab05b916-be4c-3b08-1464-5a90e
 echo json_encode($result, JSON_PRETTY_PRINT);
 ~~~~~~~~~~~~~
 
-```
+~~~~~~~~~~~~~
 {
     "result": true
 }
-```
+~~~~~~~~~~~~~
 
 In this example, we send a POST request to `/data/Contact/:id` endpoint that updates
 a Contact record.
@@ -116,11 +116,11 @@ $result = $client->request('DELETE', '/data/Contact/ab05b916-be4c-3b08-1464-5a90
 echo json_encode($result, JSON_PRETTY_PRINT);
 ~~~~~~~~~~~~~
 
-```
+~~~~~~~~~~~~~
 {
     "result": true
 }
-```
+~~~~~~~~~~~~~
 
 In this example, we send a DELETE request to `/data/Contact/:id` endpoint that deletes
 a Contact record.
@@ -143,7 +143,7 @@ $result = $client->get('/data/Contact', ['limit' => 2]);
 echo json_encode($result, JSON_PRETTY_PRINT);
 ~~~~~~~~~~~~~
 
-```
+~~~~~~~~~~~~~
 {
     "records": [
         {
@@ -165,7 +165,7 @@ echo json_encode($result, JSON_PRETTY_PRINT);
     ],
     "total_results": 200
 }
-```
+~~~~~~~~~~~~~
 
 \section post POST
 
@@ -185,11 +185,11 @@ $result = $client->post('/data/Contact', ['data' => ['first_name' => 'Andrey', '
 echo json_encode($result, JSON_PRETTY_PRINT);
 ~~~~~~~~~~~~~
 
-```
+~~~~~~~~~~~~~
 {
     "id": "ab05b916-be4c-3b08-1464-5a90e5f5dc5d"
 }
-```
+~~~~~~~~~~~~~
 
 \section patch PATCH
 
@@ -211,11 +211,11 @@ $result = $client->patch('/data/Contact/ab05b916-be4c-3b08-1464-5a90e5f5dc5d', [
 echo json_encode($result, JSON_PRETTY_PRINT);
 ~~~~~~~~~~~~~
 
-```
+~~~~~~~~~~~~~
 {
     "result": true
 }
-```
+~~~~~~~~~~~~~
 
 \section delete DELETE
 
@@ -235,9 +235,9 @@ $result = $client->delete('/data/Contact/ab05b916-be4c-3b08-1464-5a90e5f5dc5d');
 echo json_encode($result, JSON_PRETTY_PRINT);
 ~~~~~~~~~~~~~
 
-```
+~~~~~~~~~~~~~
 {
     "result": true
 }
-```
+~~~~~~~~~~~~~
 

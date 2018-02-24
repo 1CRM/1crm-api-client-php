@@ -10,10 +10,10 @@ $result = $model->get($id, ['first_name', 'last_name']);
 echo json_encode($result, JSON_PRETTY_PRINT);
 ~~~~~~~~~~~~~
 
-```
+~~~~~~~~~~~~~
 {
     "first_name": "Andrey",
     "last_name": "Demenev",
     "id": "5979d952-8714-8239-ae3c-5a9101fabab5"
 }
-```
+~~~~~~~~~~~~~

@@ -18,9 +18,9 @@ $result = $model->update('967e8d65-1665-6b67-7ad2-5a8fc2287a44', ['photo' => $fi
 echo json_encode($result, JSON_PRETTY_PRINT);
 ~~~~~~~~~~~~~
 
-```
+~~~~~~~~~~~~~
 true
-```
+~~~~~~~~~~~~~
 
 ### Creating a Document
 
@@ -36,9 +36,9 @@ $result = $model->create(['document_name' => 'Text Document', 'revision_filename
 echo json_encode($result, JSON_PRETTY_PRINT);
 ~~~~~~~~~~~~~
 
-```
+~~~~~~~~~~~~~
 "2f5d6dec-e1c5-e7c1-33f9-5a9119971946"
-```
+~~~~~~~~~~~~~
 
 ### Creating a Document revision
 
@@ -57,9 +57,9 @@ $result = $model->create([
 echo json_encode($result, JSON_PRETTY_PRINT);
 ~~~~~~~~~~~~~
 
-```
+~~~~~~~~~~~~~
 "e9a27ddb-8240-c9b5-83d6-5a911acc7334"
-```
+~~~~~~~~~~~~~
 
 ### Creating a Note with attachment
 
@@ -79,7 +79,7 @@ $result = $model->create([
 echo json_encode($result, JSON_PRETTY_PRINT);
 ~~~~~~~~~~~~~
 
-```
+~~~~~~~~~~~~~
 "a6821be0-5467-a2d8-8a55-5a911bcfc186"
-```
+~~~~~~~~~~~~~
 

@@ -12,7 +12,7 @@ $client = new APIClient\Client('https://demo.1crmcloud.com/api.php', $auth);
 echo json_encode($client->me(), JSON_PRETTY_PRINT);
 ~~~~~~~~~~~~~
 
-```
+~~~~~~~~~~~~~
 {
     "id": "Users:1",
     "name": null,
@@ -22,7 +22,7 @@ echo json_encode($client->me(), JSON_PRETTY_PRINT);
     "groups": [],
     "email": null
 }
-```
+~~~~~~~~~~~~~
 
 ### 1CRM server version
 
@@ -36,7 +36,7 @@ $client = new APIClient\Client('https://demo.1crmcloud.com/api.php', $auth);
 echo json_encode($client->serverVersion(), JSON_PRETTY_PRINT);
 ~~~~~~~~~~~~~
 
-```
+~~~~~~~~~~~~~
 {
     "version": "8.5.0",
     "authenticated": true,
@@ -44,7 +44,7 @@ echo json_encode($client->serverVersion(), JSON_PRETTY_PRINT);
         "enterprise"
     ]
 }
-```
+~~~~~~~~~~~~~
 
 This method can be called without authentication:
 
@@ -56,7 +56,7 @@ $client = new APIClient\Client('https://demo.1crmcloud.com/api.php');
 echo json_encode($client->serverVersion(), JSON_PRETTY_PRINT);
 ~~~~~~~~~~~~~
 
-```
+~~~~~~~~~~~~~
 {
     "version": "8.5.0",
     "authenticated": false,
@@ -64,7 +64,7 @@ echo json_encode($client->serverVersion(), JSON_PRETTY_PRINT);
         "enterprise"
     ]
 }
-```
+~~~~~~~~~~~~~
 
 ### Get 1CRM API server public key:
 
@@ -78,7 +78,7 @@ $client = new APIClient\Client('https://demo.1crmcloud.com/api.php', $auth);
 echo $client->serverKey();
 ~~~~~~~~~~~~~
 
-```
+~~~~~~~~~~~~~
 -----BEGIN PUBLIC KEY-----
 MIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEA4KcMj6As8IE5VvgE8IGm
 X+nQC4smrw5BG3QzJAf735RFkHXnGb1CbeE1WHLCol8Hm+u2VphHRLjNW8x7/T+S
@@ -94,7 +94,7 @@ OUFCO0O8cz/QjvzdpfmF2mb9E6Be6ov7jr5l7i6o2b5EkrcvpD41NZwGArscJu3P
 4LsEpFI2Bc9fZIsrnJ8nr8sCAwEAAQ==
 -----END PUBLIC KEY-----
 
-```
+~~~~~~~~~~~~~
 
 This method does not require authentication:
 
@@ -106,7 +106,7 @@ $client = new APIClient\Client('https://demo.1crmcloud.com/api.php');
 echo $client->serverKey();
 ~~~~~~~~~~~~~
 
-```
+~~~~~~~~~~~~~
 -----BEGIN PUBLIC KEY-----
 MIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEA4KcMj6As8IE5VvgE8IGm
 X+nQC4smrw5BG3QzJAf735RFkHXnGb1CbeE1WHLCol8Hm+u2VphHRLjNW8x7/T+S
@@ -122,4 +122,4 @@ OUFCO0O8cz/QjvzdpfmF2mb9E6Be6ov7jr5l7i6o2b5EkrcvpD41NZwGArscJu3P
 4LsEpFI2Bc9fZIsrnJ8nr8sCAwEAAQ==
 -----END PUBLIC KEY-----
 
-```
+~~~~~~~~~~~~~

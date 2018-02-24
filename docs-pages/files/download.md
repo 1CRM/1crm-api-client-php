@@ -10,9 +10,9 @@ $result = (string)$files->download('Document', '2f5d6dec-e1c5-e7c1-33f9-5a911997
 echo json_encode($result, JSON_PRETTY_PRINT);
 ~~~~~~~~~~~~~
 
-```
+~~~~~~~~~~~~~
 "This is the contents of text file!!!\n"
-```
+~~~~~~~~~~~~~
 
 [Files::download()](@ref OneCRM::APIClient::Files::download) returns an instance of
 `GuzzleHttp\Psr7\Stream` class. You can simply cast the stream to a string, as in

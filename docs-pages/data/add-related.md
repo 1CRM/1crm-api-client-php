@@ -18,9 +18,9 @@ $result = $model->addRelated($dstContactId, 'accounts', $account_ids);
 echo json_encode($result, JSON_PRETTY_PRINT);
 ~~~~~~~~~~~~~
 
-```
+~~~~~~~~~~~~~
 true
-```
+~~~~~~~~~~~~~
 
 This is the simplest form of using this method. You just pass an array of related record IDs in
 `$data` parameter of [Model::addRelated()](@ref OneCRM::APIClient::Model::addRelated) method.
@@ -41,6 +41,6 @@ $result = $model->addRelated($assemblyId, 'products', $relations);
 echo json_encode($result, JSON_PRETTY_PRINT);
 ~~~~~~~~~~~~~
 
-```
+~~~~~~~~~~~~~
 true
-```
+~~~~~~~~~~~~~

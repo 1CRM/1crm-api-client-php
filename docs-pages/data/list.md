@@ -10,7 +10,7 @@ echo $result->totalResults(), "\n";
 echo json_encode($result->getRecords(), JSON_PRETTY_PRINT);
 ~~~~~~~~~~~~~
 
-```
+~~~~~~~~~~~~~
 200
 [
     {
@@ -30,7 +30,7 @@ echo json_encode($result->getRecords(), JSON_PRETTY_PRINT);
         "_display": "Garret Alejo"
     }
 ]
-```
+~~~~~~~~~~~~~
 
 Here we specify that we want to start from first record (0 is passed in `$offset` argument),
 and we want no more than 2 rescords returned (2 is passed in `$limit` argument). totalResults()
@@ -56,7 +56,7 @@ echo $result->totalResults(), "\n";
 echo json_encode($result->getRecords(), JSON_PRETTY_PRINT);
 ~~~~~~~~~~~~~
 
-```
+~~~~~~~~~~~~~
 1
 [
     {
@@ -68,7 +68,7 @@ echo json_encode($result->getRecords(), JSON_PRETTY_PRINT);
         "_display": "Michael Whitehead"
     }
 ]
-```
+~~~~~~~~~~~~~
 
 ### filters option
 
@@ -81,7 +81,7 @@ echo $result->totalResults(), "\n";
 echo json_encode($result->getRecords(), JSON_PRETTY_PRINT);
 ~~~~~~~~~~~~~
 
-```
+~~~~~~~~~~~~~
 15
 [
     {
@@ -101,7 +101,7 @@ echo json_encode($result->getRecords(), JSON_PRETTY_PRINT);
         "_display": "Emma Alley"
     }
 ]
-```
+~~~~~~~~~~~~~
 
 Another example:
 
@@ -112,7 +112,7 @@ echo $result->totalResults(), "\n";
 echo json_encode($result->getRecords(), JSON_PRETTY_PRINT);
 ~~~~~~~~~~~~~
 
-```
+~~~~~~~~~~~~~
 1
 [
     {
@@ -125,7 +125,7 @@ echo json_encode($result->getRecords(), JSON_PRETTY_PRINT);
         "favorite": "0"
     }
 ]
-```
+~~~~~~~~~~~~~
 
 ### order option
 
@@ -138,7 +138,7 @@ echo $result->totalResults(), "\n";
 echo json_encode($result->getRecords(), JSON_PRETTY_PRINT);
 ~~~~~~~~~~~~~
 
-```
+~~~~~~~~~~~~~
 200
 [
     {
@@ -158,7 +158,7 @@ echo json_encode($result->getRecords(), JSON_PRETTY_PRINT);
         "_display": "Dario Yan"
     }
 ]
-```
+~~~~~~~~~~~~~
 
 ### fields option
 
@@ -171,7 +171,7 @@ echo $result->totalResults(), "\n";
 echo json_encode($result->getRecords(), JSON_PRETTY_PRINT);
 ~~~~~~~~~~~~~
 
-```
+~~~~~~~~~~~~~
 200
 [
     {
@@ -193,7 +193,7 @@ echo json_encode($result->getRecords(), JSON_PRETTY_PRINT);
         "_display": "Garret Alejo"
     }
 ]
-```
+~~~~~~~~~~~~~
 
 
 ### query_favorite option
@@ -208,7 +208,7 @@ echo $result->totalResults(), "\n";
 echo json_encode($result->getRecords(), JSON_PRETTY_PRINT);
 ~~~~~~~~~~~~~
 
-```
+~~~~~~~~~~~~~
 200
 [
     {
@@ -230,7 +230,7 @@ echo json_encode($result->getRecords(), JSON_PRETTY_PRINT);
         "favorite": null
     }
 ]
-```
+~~~~~~~~~~~~~
 
 \attention
 Records added to favorites will have `favorite` field with value of `"0"`

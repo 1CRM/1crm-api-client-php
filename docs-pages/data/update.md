@@ -9,6 +9,6 @@ $result = $model->update('5979d952-8714-8239-ae3c-5a9101fabab5', ['email1' => 'a
 echo json_encode($result, JSON_PRETTY_PRINT);
 ~~~~~~~~~~~~~
 
-```
+~~~~~~~~~~~~~
 true
-```
+~~~~~~~~~~~~~

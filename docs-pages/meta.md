@@ -10,7 +10,7 @@ $result = $model->metadata();
 echo json_encode($result, JSON_PRETTY_PRINT);
 ~~~~~~~~~~~~~
 
-```
+~~~~~~~~~~~~~
 {
     "fields": {
         "id": {
@@ -2029,4 +2029,4 @@ echo json_encode($result, JSON_PRETTY_PRINT);
         }
     }
 }
-```
+~~~~~~~~~~~~~

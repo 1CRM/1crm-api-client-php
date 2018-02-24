@@ -29,7 +29,7 @@ $result = $calendar->events('2018-03-26 00:00:00', '2018-03-27 23:59:59');
 echo json_encode($result, JSON_PRETTY_PRINT);
 ~~~~~~~~~~~~~
 
-```
+~~~~~~~~~~~~~
 [
     {
         "name": "Bad time, will call back",
@@ -48,7 +48,7 @@ echo json_encode($result, JSON_PRETTY_PRINT);
         "type": "Meeting"
     }
 ]
-```
+~~~~~~~~~~~~~
 
 You can limit returned event types by passing third argument to
 [Calendar::events()](@ref OneCRM::APIClient::Calendar::events) method, with an array
@@ -61,7 +61,7 @@ $result = $calendar->events('2018-03-26 00:00:00', '2018-03-27 23:59:59', ['Call
 echo json_encode($result, JSON_PRETTY_PRINT);
 ~~~~~~~~~~~~~
 
-```
+~~~~~~~~~~~~~
 [
     {
         "name": "Bad time, will call back",
@@ -72,4 +72,4 @@ echo json_encode($result, JSON_PRETTY_PRINT);
         "type": "Call"
     }
 ]
-```
+~~~~~~~~~~~~~

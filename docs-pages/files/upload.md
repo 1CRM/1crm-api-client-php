@@ -15,9 +15,9 @@ $result = $files->upload('this is the contents of a text file', 'file.txt', 'tex
 echo json_encode($result, JSON_PRETTY_PRINT);
 ~~~~~~~~~~~~~
 
-```
+~~~~~~~~~~~~~
 "INCOMING~41e9ee12-de45-4488-e8ab-5a9114476b58"
-```
+~~~~~~~~~~~~~
 
 #### using a file resource 
 
@@ -28,9 +28,9 @@ $result = $files->upload($res, 'file.txt', 'text/plain');
 echo json_encode($result, JSON_PRETTY_PRINT);
 ~~~~~~~~~~~~~
 
-```
+~~~~~~~~~~~~~
 "INCOMING~6cfe1dc9-4c29-adef-a415-5a91149de523"
-```
+~~~~~~~~~~~~~
 
 #### using a stream resource 
 
@@ -41,6 +41,6 @@ $result = $files->upload($stream, 'file.txt', 'text/plain');
 echo json_encode($result, JSON_PRETTY_PRINT);
 ~~~~~~~~~~~~~
 
-```
+~~~~~~~~~~~~~
 "INCOMING~6cfe1dc9-4c29-adef-a415-5a91149de523"
-```
+~~~~~~~~~~~~~

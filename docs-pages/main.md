@@ -6,9 +6,9 @@ This PHP library can be used to access 1CRM REST API.
 
 Use [Composer](https://getcomposer.org/) to install the package
 
-```
+~~~~~~~~~~~~~
 composer install onecrm/api
-```
+~~~~~~~~~~~~~
 
 After the package is installed, just use 
 

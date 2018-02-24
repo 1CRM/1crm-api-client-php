@@ -13,7 +13,7 @@ echo $result->totalResults(), "\n";
 echo json_encode($result->getRecords(), JSON_PRETTY_PRINT);
 ~~~~~~~~~~~~~
 
-```
+~~~~~~~~~~~~~
 2
 [
     {
@@ -47,7 +47,7 @@ echo json_encode($result->getRecords(), JSON_PRETTY_PRINT);
         "_display": "ABC FUEL CO"
     }
 ]
-```
+~~~~~~~~~~~~~
 
 [Model::getRelated()](@ref OneCRM::APIClient::Model::getRelated) accepts same options as
 [Model::getList()](@ref OneCRM::APIClient::Model::getList) - see \ref data-list
