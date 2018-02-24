@@ -9,7 +9,7 @@ branches:
 # Environment variables
 env:
   global:
-    - GH_REPO_NAME: 1CRM/1crm-api-client-php
+    - GH_REPO_NAME: 1crm-api-client-php
     - DOXYFILE: $TRAVIS_BUILD_DIR/Doxyfile
     - GH_REPO_REF: github.com/1CRM/1crm-api-client-php
 
