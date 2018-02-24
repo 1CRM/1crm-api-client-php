@@ -65,7 +65,6 @@ class Client {
                 return $body;
             }
             $json = @json_decode((string)$body, true);
-            var_dump($json);
             if ($json === null) {
                 throw new Error('Unexpected reply from server', 500);    
             }
