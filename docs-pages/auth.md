@@ -168,7 +168,6 @@ This grant provides great user experience for web applications and native mobile
 use OneCRM\APIClient;
 use OneCRM\APIClient\Authentication;
 
-// should be same options as used when calling AuthorizationFlow::init()
 $options = [
     'client_id' => '123456789-xxx-whatever',
     'client_secret' => 'top secret',
@@ -212,4 +211,54 @@ $client = new APIClient\Client('https://demo.1crmcloud.com/api.php', $auth);
 
 ### Resfreshing access tokens
 
-kjkjj
+Access tokens have a limited lifetime. 1CRM administator can configure access token expiration
+time. After access token has expired, it cannot be used to access the API any more. To continue
+using the API, you must refresh an expired access token. To understand how token refreshing works, lets
+have a look at access token structure first:
+
+~~~~~~~~~~~~~{.php}
+use OneCRM\APIClient;
+use OneCRM\APIClient\Authentication;
+
+$options = [
+    'client_id' => '123456789-xxx-whatever',
+    'client_secret' => 'top secret',
+    'scope' => 'read write profile',
+    'username' => 'admin',
+    'password' => 'admin',
+];
+
+$flow = new APIClient\AuthorizationFlow('https://demo.1crmcloud.com/api.php', $options);
+
+$access_token = $flow->init('password');
+echo json_encode($access_token, JSON_PRETTY_PRINT);
+~~~~~~~~~~~~~
+
+~~~~~~~~~~~~~
+{
+    "token_type": "Bearer",
+    "expires_in": 86399,
+    "access_token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6ImI3NzBjZjQzODcxYTRlYWJmODg3ZmMwYmQzOTA5ZTBkZjY2M2U3MjEwNzE4YWVmYjIzNzUxNmNhMzE3YTgzYTk0ZGFlMTE4NTk1NWE3ZGUyIn0.eyJhdWQiOiIxMmVjYjI1Yy0zNWZiLWQyOWUtYmI2Ni01YTkwM2EwNDhiMDYiLCJqdGkiOiJiNzcwY2Y0Mzg3MWE0ZWFiZjg4N2ZjMGJkMzkwOWUwZGY2NjNlNzIxMDcxOGFlZmIyMzc1MTZjYTMxN2E4M2E5NGRhZTExODU5NTVhN2RlMiIsImlhdCI6MTUxOTQ4MzcyNCwibmJmIjoxNTE5NDgzNzI0LCJleHAiOjE1MTk1NzAxMjMsInN1YiI6IlVzZXJzOjEiLCJzY29wZXMiOlsicmVhZCIsIndyaXRlIiwicHJvZmlsZSJdfQ.AUKqkoUPBDWfbX69JLoiwZRhxEox_hXbLXSaO65CFecpsi9iTn-pfNUfBUs7rlHNv1uZis2h3Ia8ZiMOdobLMWlqh6SPnvIgA82J_0BVPDVoSijxF2TZ2v-kKq0KsbBAZcJhMBMw2WTP2Wmcf9m4A92kkKUmmwOvF9B_7WLjZ-hw1VMLLdO4rIWXimvwH0Y6-8Tvc6N2PCp5U2DYPaKxZ1jXgNI3ldJz1nJMmstK3d9IBTPV3SsKdWFHJn48Md9DBGBEy6E5oiCJqj17wimqjbgPzLo3KiR7EcZ5bid7jcR3gXfwFyE3_7nmMkdyoY8nAf6jVnkk72njH_iEjBobEHFPb2WovD8JWMwaEqCQjBVMz9K6UVy31v7Mbo1ulUIiCL5-qqXOIMQ9EfUGCqHtkcMKMZdD4DKeGGc2LJhBCwABUETHtbwab9uMAPb7OFAQUMMNewNidumc7pLRYoUajRdSyt_C_XZ2B8Jh2ASAYoAVXSYkL_6CbjBSMcf6saXp9_QGiujk1LsJpoK6GuKgvYRR3QI8lUsj_SiwamLgghGCe_l_71OezneystWxZ992qTKqEY2_lGtLDT1DggybsyC6hEmxJ_FIkI00mKXoTlL2lQKYc6eMpys6hJyJsF6oTuYPDo3CKsdHjDGxjBVog3wU8dEN3r4Uhe0_5ni-8Cw",
+    "refresh_token": "pXppRl+5sqtdImvH+TTZHzcPXaRFDTkf2\/p0T+VPygAcg7JF5N7ZCR5NdIyhdU+IOsfv9wdCohrk6LviVKlRdlT9MLh\/x6aOU3bYXv1vriIakgiM5KGiRIHE\/yxfYbndSf6cTYu4xCPpZSeALu8dpg2r43fK9y9Gl70u2wQtTRARp9cnqMSgzh9wHRRBrtcqOl9\/hlekBZ9\/VMwHQ59s+oVJBsYIryHtUGoVh8n1TkraYl7hPPitHFfnp7pjXSGCdBbEeZpXemeVLjNOmfEIdvoZA5yADJiL3jAvM+8iNRoLPi7Xx0dhITgxf9fcNeK834cWop6WHnhpB\/PpEAOivKnn3+kmS318rsTrIGgbtScqAZICXmjll5Os7zpz\/zUVxWlDOqEzL1IrGvuvjE5JWuVHpeWv9AyoyTUArYwlPQCoH2o\/frXXUiMWI34+Ffw1rOFFkY63D2SEcmNNXXGfyn70Qe6AEmPQoUbVdvnsIikF9J+zkcGg\/3z1FXRfcp7M9CVDnkzA\/osjIwQrHNBvRIoRizouTnRDesg2Au209pIxJUSbCgQeKlve\/5LnNhRK9BS527ikq79rkbxYufTc\/wg7t5pORCh48RV8ScIX+zWllkDItDkDH666o61bVw7vOkXw4Z5NVyNEoon\/WfZMJWTGFJOU681PcR4L0YcHYHU="
+}
+~~~~~~~~~~~~~
+
+You can use `expires_in` fields to calculate the time when the token expires (the value is in seconds). Any time before the expriration time, you can use the refresh token to obtain a new access token:
+
+
+~~~~~~~~~~~~~{.php}
+use OneCRM\APIClient;
+use OneCRM\APIClient\Authentication;
+
+$options = [
+    'client_id' => '123456789-xxx-whatever',
+    'client_secret' => 'top secret',
+    'scope' => 'read write profile',
+];
+
+$flow = new APIClient\AuthorizationFlow('https://demo.1crmcloud.com/api.php', $options);
+
+$access_token = stored_access_token(); // previously obtained access token
+$new_token = $flow->refreshToken($access_token['refresh_token']);
+echo json_encode($new_token, JSON_PRETTY_PRINT);
+~~~~~~~~~~~~~
