@@ -2,11 +2,17 @@
 
 namespace OneCRM\APIClient;
 
+/**
+ * Represents an API error
+ */
 class Error extends \Exception {
 
     protected $hint;
     protected $error_type;
 
+    /**
+     * Creates an error object from API reply
+     */
     public static function fromAPIResponse($code, $response) {
         if (is_array($response)) {
             $message = "";
@@ -27,10 +33,19 @@ class Error extends \Exception {
         }
     }
 
+    /**
+     * Gets error hint
+     * 
+     * 1CRM REST API can return hint with an error to suggest a possible
+     * fix.
+     */
     public function getHint() {
         return $this->hint;
     }
 
+    /**
+     * Gets error type returned from 1CRM REST API 
+     */
     public function getType() {
         return $this->error_type;
     }

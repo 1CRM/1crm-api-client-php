@@ -2,6 +2,10 @@
 
 namespace OneCRM\APIClient;
 
+/**
+ * Generator class for ListResult
+ * 
+ */
 class ListResultGenerator {
 
     protected $client;
@@ -16,6 +20,9 @@ class ListResultGenerator {
         $this->client = $client;
     }
 
+    /**
+     * Generator function used to iterate over all results in a foreach loop
+     */
     public function generate() {
         $query = $this->query;
         $currentPosition = $query['offset'];
