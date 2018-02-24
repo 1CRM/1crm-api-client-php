@@ -17,7 +17,8 @@ dt {
 
 #main-nav ul, #nav-path ul, .headertitle, .textblock > *,
 	address.footer, #titlearea table, .memberdecls, .groupheader,
-	.memtitle, .memitem, div.contents > ul, div.contents, div.header
+	.memtitle, .memitem, div.contents > ul, div.contents, div.header,
+	#navrow1 > ul
 	{
 	max-width: 800px !important;
 	margin-left: auto !important;
