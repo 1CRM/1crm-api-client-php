@@ -199,20 +199,20 @@ Generat/home/travis/build/1CRM/1crm-api-client-php/src/APIClient/Client.php:10: 
 /home/travis/build/1CRM/1crm-api-client-php/src/APIClient/Client.php:11: warning: Member $auth (variable) of class OneCRM::APIClient::Client is not documented.
 /home/travis/build/1CRM/1crm-api-client-php/src/APIClient/Client.php:12: warning: Member $_calendar (variable) of class OneCRM::APIClient::Client is not documented.
 /home/travis/build/1CRM/1crm-api-client-php/src/APIClient/Client.php:13: warning: Member $_files (variable) of class OneCRM::APIClient::Client is not documented.
-/home/travis/build/1CRM/1crm-api-client-php/src/APIClient/Client.php:142: warning: argument '$query' of command @param is not found in the argument list of OneCRM\APIClient\Client::delete($endpoint,$query_params=[])
-/home/travis/build/1CRM/1crm-api-client-php/src/APIClient/Client.php:142: warning: The following parameters of OneCRM\APIClient\Client\delete($endpoint,$query_params=[]) are not documented:
+/home/travis/build/1CRM/1crm-api-client-php/src/APIClient/Client.php:141: warning: argument '$query' of command @param is not found in the argument list of OneCRM\APIClient\Client::delete($endpoint,$query_params=[])
+/home/travis/build/1CRM/1crm-api-client-php/src/APIClient/Client.php:141: warning: The following parameters of OneCRM\APIClient\Client\delete($endpoint,$query_params=[]) are not documented:
   parameter '$query_params'
-/home/travis/build/1CRM/1crm-api-client-php/src/APIClient/Client.php:127: warning: argument '$query' of command @param is not found in the argument list of OneCRM\APIClient\Client::get($endpoint,$query_params=[])
-/home/travis/build/1CRM/1crm-api-client-php/src/APIClient/Client.php:127: warning: The following parameters of OneCRM\APIClient\Client\get($endpoint,$query_params=[]) are not documented:
+/home/travis/build/1CRM/1crm-api-client-php/src/APIClient/Client.php:126: warning: argument '$query' of command @param is not found in the argument list of OneCRM\APIClient\Client::get($endpoint,$query_params=[])
+/home/travis/build/1CRM/1crm-api-client-php/src/APIClient/Client.php:126: warning: The following parameters of OneCRM\APIClient\Client\get($endpoint,$query_params=[]) are not documented:
   parameter '$query_params'
-/home/travis/build/1CRM/1crm-api-client-php/src/APIClient/Client.php:95: warning: argument '$query' of command @param is not found in the argument list of OneCRM\APIClient\Client::patch($endpoint,$body,$query_params=[])
-/home/travis/build/1CRM/1crm-api-client-php/src/APIClient/Client.php:95: warning: The following parameters of OneCRM\APIClient\Client\patch($endpoint,$body,$query_params=[]) are not documented:
+/home/travis/build/1CRM/1crm-api-client-php/src/APIClient/Client.php:94: warning: argument '$query' of command @param is not found in the argument list of OneCRM\APIClient\Client::patch($endpoint,$body,$query_params=[])
+/home/travis/build/1CRM/1crm-api-client-php/src/APIClient/Client.php:94: warning: The following parameters of OneCRM\APIClient\Client\patch($endpoint,$body,$query_params=[]) are not documented:
   parameter '$query_params'
-/home/travis/build/1CRM/1crm-api-client-php/src/APIClient/Client.php:79: warning: argument '$query' of command @param is not found in the argument list of OneCRM\APIClient\Client::post($endpoint,$body,$query_params=[])
-/home/travis/build/1CRM/1crm-api-client-php/src/APIClient/Client.php:79: warning: The following parameters of OneCRM\APIClient\Client\post($endpoint,$body,$query_params=[]) are not documented:
+/home/travis/build/1CRM/1crm-api-client-php/src/APIClient/Client.php:78: warning: argument '$query' of command @param is not found in the argument list of OneCRM\APIClient\Client::post($endpoint,$body,$query_params=[])
+/home/travis/build/1CRM/1crm-api-client-php/src/APIClient/Client.php:78: warning: The following parameters of OneCRM\APIClient\Client\post($endpoint,$body,$query_params=[]) are not documented:
   parameter '$query_params'
-/home/travis/build/1CRM/1crm-api-client-php/src/APIClient/Client.php:111: warning: argument '$query' of command @param is not found in the argument list of OneCRM\APIClient\Client::put($endpoint,$body,$query_params=[])
-/home/travis/build/1CRM/1crm-api-client-php/src/APIClient/Client.php:111: warning: The following parameters of OneCRM\APIClient\Client\put($endpoint,$body,$query_params=[]) are not documented:
+/home/travis/build/1CRM/1crm-api-client-php/src/APIClient/Client.php:110: warning: argument '$query' of command @param is not found in the argument list of OneCRM\APIClient\Client::put($endpoint,$body,$query_params=[])
+/home/travis/build/1CRM/1crm-api-client-php/src/APIClient/Client.php:110: warning: The following parameters of OneCRM\APIClient\Client\put($endpoint,$body,$query_params=[]) are not documented:
   parameter '$query_params'
 /home/travis/build/1CRM/1crm-api-client-php/src/APIClient/Client.php:41: warning: Found unknown command `\Client'
 /home/travis/build/1CRM/1crm-api-client-php/src/APIClient/Error.php:10: warning: Member $hint (variable) of class OneCRM::APIClient::Error is not documented.
@@ -261,5 +261,5 @@ Generating file index...
 Generating file member index...
 Generating example index...
 finalizing index lists...
-lookup cache used 80/65536 hits=408 misses=84
+lookup cache used 80/65536 hits=418 misses=84
 finished...
