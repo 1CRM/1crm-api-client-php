@@ -107,6 +107,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a1eb5b0ea5b114ced69c3119a5b103abf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8fc858f7f8ebdd2108b5cc88f6356bd9"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_one_c_r_m_1_1_a_p_i_client_1_1_model.html#a8fc858f7f8ebdd2108b5cc88f6356bd9">addRelated</a> ($id, $link, $data)</td></tr>
 <tr class="separator:a8fc858f7f8ebdd2108b5cc88f6356bd9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a14f3ec3b81b914132a82cfaf8e2f3023"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_one_c_r_m_1_1_a_p_i_client_1_1_model.html#a14f3ec3b81b914132a82cfaf8e2f3023">deleteRelated</a> ($id, $link, $rel_id)</td></tr>
+<tr class="separator:a14f3ec3b81b914132a82cfaf8e2f3023"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7e8b48ee75b1f4cc1cc8f12b0f8d37e8"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_one_c_r_m_1_1_a_p_i_client_1_1_model.html#a7e8b48ee75b1f4cc1cc8f12b0f8d37e8">get</a> ($id, array $fields=[])</td></tr>
 <tr class="separator:a7e8b48ee75b1f4cc1cc8f12b0f8d37e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a82edf53f8b614c0ba67602652801e85b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_one_c_r_m_1_1_a_p_i_client_1_1_model.html#a82edf53f8b614c0ba67602652801e85b">create</a> ($data)</td></tr>
@@ -227,6 +229,47 @@ Protected Attributes</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true if record was deleted </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a14f3ec3b81b914132a82cfaf8e2f3023"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">OneCRM\APIClient\Model::deleteRelated </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>$id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>$link</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>$rel_id</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Removes relationship between records</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">$id</td><td>ID of parent record </td></tr>
+    <tr><td class="paramname">$link</td><td>Link name </td></tr>
+    <tr><td class="paramname">$rel_id</td><td>ID of related record to remove </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

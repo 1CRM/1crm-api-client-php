@@ -1,4 +1,6 @@
 var searchData=
 [
-  ['get_20information_20about_20a_20file',['Get information about a file',['../files-info.html',1,'files']]]
+  ['filter_20contacts_20list',['Filter contacts list',['../ex-filter-contacts.html',1,'examples']]],
+  ['filter_2dcontacts',['filter-contacts',['../md_docs-pages_examples_filter-contacts.html',1,'']]],
+  ['files',['files',['../md_docs-pages_files.html',1,'']]]
 ];
