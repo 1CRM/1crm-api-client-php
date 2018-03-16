@@ -124,6 +124,22 @@ class Model {
     }
 
     /**
+     * 
+     * Removes relationship between records
+     * 
+     * 
+     * 
+     * @param $id ID of parent record
+     * @param $link Link name
+     * @param $rel_id ID of related record to remove
+     */
+    public function deleteRelated($id, $link, $rel_id) {
+        $endpoint = '/data/' . $this->model_name . '/' . $id . '/' . $link . '/' . $rel_id;
+        $result = $this->client->delete($endpoint);
+        return $result['result'];
+    }
+
+    /**
      * Retrieves single record with specified ID
      * 
      * @param $id Record ID

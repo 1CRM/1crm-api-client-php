@@ -29,3 +29,5 @@ in your code.
 \subpage calendar
 
 \subpage utility
+
+\subpage examples
