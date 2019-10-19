@@ -94,7 +94,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <h1><a class="anchor" id="auth-basic"></a>
 Basic authentication</h1>
 <p>HTTP Basic authentication is the simplest form of authentication supported by 1CRM API. It uses 1CRM user name and password, and transmits them in HTTP request headers. This simplicity is the only advantage of this authentication method. Username and password are sent in cleartext with each request. Whenever possible, you should prefer OAuth 2.0.</p>
-<p>To use basic authentication, you first create an instance of <a class="el" href="class_one_c_r_m_1_1_a_p_i_client_1_1_authentication_1_1_basic.html">OneCRM\APIClient\Authentication\Basic</a>, passing user name and password to constructor. Then create an API client using this authentication object:</p>
+<p>To use basic authentication, you first create an instance of <a class="el" href="class_one_c_r_m_1_1_a_p_i_client_1_1_authentication_1_1_basic.html">OneCRM\APIClient\Authentication\Basic</a>, passing user name and password to constructor. Then create an API client using this authentication object. The example below uses the URL of 1CRM demo site, you should use the URL of your
+1CRM system instead.</p>
 <div class="fragment"><div class="line">use <a class="code" href="interface_one_c_r_m_1_1_a_p_i_client_1_1_authentication.html">OneCRM\APIClient\Authentication</a>;</div>
 <div class="line">use OneCRM\APIClient;</div>
 <div class="line"></div>
