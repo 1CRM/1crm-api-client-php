@@ -20,7 +20,8 @@ are sent in cleartext with each request. Whenever possible, you should prefer OA
 To use basic authentication, you first create an instance of 
 [OneCRM\\APIClient\\Authentication\\Basic](@ref OneCRM::APIClient::Authentication::Basic),
 passing user name and password to constructor. Then create an API client using this authentication
-object:
+object. The example below uses the URL of 1CRM demo site, you should use the URL of your
+1CRM system instead.
 
 ~~~~~~~~~~~~~{.php}
 use OneCRM\APIClient\Authentication;
