@@ -69,7 +69,7 @@ class Client {
                 throw new Error('Unexpected reply from server', 500);    
             }
             return $json;
-        } catch (\GuzzleHttp\Exception\TransferException $e) {
+        } catch (\GuzzleHttp\Exception\GuzzleException $e) {
             throw new Error($e->getMessage(), $e->getCode(), $e);
         }
     }
