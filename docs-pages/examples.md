@@ -33,3 +33,5 @@ any available model.
 \subpage ex-quote-structure
 
 \subpage ex-create-quote
+
+\subpage ex-create-invoice
