@@ -1,17 +1,6 @@
-Warning: ignoring unsupported tag `ALLOW_UNICODE_NAMES    =' at line 79, file /home/travis/build/1CRM/1crm-api-client-php/Doxyfile
-Warning: ignoring unsupported tag `TOC_INCLUDE_HEADINGS   =' at line 314, file /home/travis/build/1CRM/1crm-api-client-php/Doxyfile
-Warning: ignoring unsupported tag `GROUP_NESTED_COMPOUNDS =' at line 371, file /home/travis/build/1CRM/1crm-api-client-php/Doxyfile
-Warning: ignoring unsupported tag `HIDE_COMPOUND_REFERENCE=' at line 542, file /home/travis/build/1CRM/1crm-api-client-php/Doxyfile
-Warning: ignoring unsupported tag `WARN_AS_ERROR          =' at line 766, file /home/travis/build/1CRM/1crm-api-client-php/Doxyfile
-Warning: ignoring unsupported tag `HTML_DYNAMIC_MENUS     =' at line 1237, file /home/travis/build/1CRM/1crm-api-client-php/Doxyfile
-Warning: ignoring unsupported tag `LATEX_EXTRA_STYLESHEET =' at line 1752, file /home/travis/build/1CRM/1crm-api-client-php/Doxyfile
-Warning: ignoring unsupported tag `LATEX_TIMESTAMP        =' at line 1819, file /home/travis/build/1CRM/1crm-api-client-php/Doxyfile
-Warning: ignoring unsupported tag `RTF_SOURCE_CODE        =' at line 1885, file /home/travis/build/1CRM/1crm-api-client-php/Doxyfile
-Warning: ignoring unsupported tag `MAN_SUBDIR             =' at line 1920, file /home/travis/build/1CRM/1crm-api-client-php/Doxyfile
-Warning: ignoring unsupported tag `DOCBOOK_PROGRAMLISTING =' at line 1983, file /home/travis/build/1CRM/1crm-api-client-php/Doxyfile
-Warning: ignoring unsupported tag `PLANTUML_JAR_PATH      =' at line 2412, file /home/travis/build/1CRM/1crm-api-client-php/Doxyfile
-Warning: ignoring unsupported tag `PLANTUML_CFG_FILE      =' at line 2417, file /home/travis/build/1CRM/1crm-api-client-php/Doxyfile
-Warning: ignoring unsupported tag `PLANTUML_INCLUDE_PATH  =' at line 2422, file /home/travis/build/1CRM/1crm-api-client-php/Doxyfile
+warning: ignoring unsupported tag `TOC_INCLUDE_HEADINGS   =' at line 314, file /home/travis/build/1CRM/1crm-api-client-php/Doxyfile
+warning: ignoring unsupported tag `HTML_DYNAMIC_MENUS     =' at line 1237, file /home/travis/build/1CRM/1crm-api-client-php/Doxyfile
+warning: ignoring unsupported tag `PLANTUML_CFG_FILE      =' at line 2417, file /home/travis/build/1CRM/1crm-api-client-php/Doxyfile
 Searching for include files...
 Searching for example files...
 Searching for images...
@@ -19,7 +8,7 @@ Searching for dot files...
 Searching for msc files...
 Searching for dia files...
 Searching for files to exclude
-Searching for files to process...
+Searching INPUT for files to process...
 Searching for files in directory /home/travis/build/1CRM/1crm-api-client-php/src
 Searching for files in directory /home/travis/build/1CRM/1crm-api-client-php/src/APIClient
 Searching for files in directory /home/travis/build/1CRM/1crm-api-client-php/src/APIClient/Authentication
@@ -64,6 +53,8 @@ Reading /home/travis/build/1CRM/1crm-api-client-php/docs-pages/data.md...
 Reading /home/travis/build/1CRM/1crm-api-client-php/docs-pages/examples/add-contact.md...
 Reading /home/travis/build/1CRM/1crm-api-client-php/docs-pages/examples/add-product.md...
 Reading /home/travis/build/1CRM/1crm-api-client-php/docs-pages/examples/create-account.md...
+Reading /home/travis/build/1CRM/1crm-api-client-php/docs-pages/examples/create-invoice.md...
+Reading /home/travis/build/1CRM/1crm-api-client-php/docs-pages/examples/create-quote.md...
 Reading /home/travis/build/1CRM/1crm-api-client-php/docs-pages/examples/delete-note.md...
 Reading /home/travis/build/1CRM/1crm-api-client-php/docs-pages/examples/delete-related.md...
 Reading /home/travis/build/1CRM/1crm-api-client-php/docs-pages/examples/errors.md...
@@ -151,67 +142,8 @@ Generating docs for page data-delete...
 Generating docs for page md_docs-pages_data_list...
 Generating docs for page data-list...
 Generating docs for page md_docs-pages_data_record...
-Generating docs for page data-record...
-Generating docs for page md_docs-pages_data_related...
-Generating docs for page data-related...
-Generating docs for page md_docs-pages_data_update...
-Generating d/home/travis/build/1CRM/1crm-api-client-php/docs-pages/examples/add-contact.md:5: warning: Found unknown command `\APIClient'
-/home/travis/build/1CRM/1crm-api-client-php/docs-pages/examples/add-contact.md:5: warning: Found unknown command `\Model'
-/home/travis/build/1CRM/1crm-api-client-php/docs-pages/examples/add-contact.md:5: warning: Found unknown command `\addRelated'
-/home/travis/build/1CRM/1crm-api-client-php/docs-pages/examples/add-product.md:11: warning: Found unknown command `\APIClient'
-/home/travis/build/1CRM/1crm-api-client-php/docs-pages/examples/add-product.md:11: warning: Found unknown command `\Model'
-/home/travis/build/1CRM/1crm-api-client-php/docs-pages/examples/add-product.md:11: warning: Found unknown command `\addRelated'
-/home/travis/build/1CRM/1crm-api-client-php/docs-pages/examples/create-account.md:6: warning: Found unknown command `\APIClient'
-/home/travis/build/1CRM/1crm-api-client-php/docs-pages/examples/create-account.md:6: warning: Found unknown command `\Model'
-/home/travis/build/1CRM/1crm-api-client-php/docs-pages/examples/create-account.md:6: warning: Found unknown command `\create'
-/home/travis/build/1CRM/1crm-api-client-php/docs-pages/examples/create-account.md:39: warning: Found unknown command `\APIClient'
-/home/travis/build/1CRM/1crm-api-client-php/docs-pages/examples/create-account.md:39: warning: Found unknown command `\Model'
-/home/travis/build/1CRM/1crm-api-client-php/docs-pages/examples/create-account.md:39: warning: Found unknown command `\create'
-/home/travis/build/1CRM/1crm-api-client-php/docs-pages/examples/delete-note.md:5: warning: Found unknown command `\APIClient'
-/home/travis/build/1CRM/1crm-api-client-php/docs-pages/examples/delete-note.md:5: warning: Found unknown command `\Model'
-/home/travis/build/1CRM/1crm-api-client-php/docs-pages/examples/delete-note.md:5: warning: Found unknown command `\delete'
-/home/travis/build/1CRM/1crm-api-client-php/docs-pages/examples/delete-related.md:5: warning: Found unknown command `\APIClient'
-/home/travis/build/1CRM/1crm-api-client-php/docs-pages/examples/delete-related.md:5: warning: Found unknown command `\Model'
-/home/travis/build/1CRM/1crm-api-client-php/docs-pages/examples/delete-related.md:5: warning: Found unknown command `\deleteRelated'
-/home/travis/build/1CRM/1crm-api-client-php/docs-pages/examples/filter-contacts.md:4: warning: Found unknown command `\APIClient'
-/home/travis/build/1CRM/1crm-api-client-php/docs-pages/examples/filter-contacts.md:4: warning: Found unknown command `\Model'
-/home/travis/build/1CRM/1crm-api-client-php/docs-pages/examples/filter-contacts.md:4: warning: Found unknown command `\getList'
-/home/travis/build/1CRM/1crm-api-client-php/docs-pages/examples/get-contact.md:6: warning: Found unknown command `\APIClient'
-/home/travis/build/1CRM/1crm-api-client-php/docs-pages/examples/get-contact.md:6: warning: Found unknown command `\Model'
-/home/travis/build/1CRM/1crm-api-client-php/docs-pages/examples/get-contact.md:6: warning: Found unknown command `\get'
-/home/travis/build/1CRM/1crm-api-client-php/docs-pages/examples/get-leads.md:6: warning: Found unknown command `\APIClient'
-/home/travis/build/1CRM/1crm-api-client-php/docs-pages/examples/get-leads.md:6: warning: Found unknown command `\Model'
-/home/travis/build/1CRM/1crm-api-client-php/docs-pages/examples/get-leads.md:6: warning: Found unknown command `\getList'
-/home/travis/build/1CRM/1crm-api-client-php/docs-pages/examples/get-leads.md:16: warning: Found unknown command `\APIClient'
-/home/travis/build/1CRM/1crm-api-client-php/docs-pages/examples/get-leads.md:16: warning: Found unknown command `\Model'
-/home/travis/build/1CRM/1crm-api-client-php/docs-pages/examples/get-leads.md:16: warning: Found unknown command `\getList'
-/home/travis/build/1CRM/1crm-api-client-php/docs-pages/examples/project-tasks.md:7: warning: Found unknown command `\APIClient'
-/home/travis/build/1CRM/1crm-api-client-php/docs-pages/examples/project-tasks.md:7: warning: Found unknown command `\Model'
-/home/travis/build/1CRM/1crm-api-client-php/docs-pages/examples/project-tasks.md:7: warning: Found unknown command `\getRelated'
-/home/travis/build/1CRM/1crm-api-client-php/docs-pages/examples/project-tasks.md:11: warning: Found unknown command `\APIClient'
-/home/travis/build/1CRM/1crm-api-client-php/docs-pages/examples/project-tasks.md:11: warning: Found unknown command `\Model'
-/home/travis/build/1CRM/1crm-api-client-php/docs-pages/examples/project-tasks.md:11: warning: Found unknown command `\getRelated'
-/home/travis/build/1CRM/1crm-api-client-php/docs-pages/examples/project-tasks.md:12: warning: Found unknown command `\APIClient'
-/home/travis/build/1CRM/1crm-api-client-php/docs-pages/examples/project-tasks.md:12: warning: Found unknown command `\Model'
-/home/travis/build/1CRM/1crm-api-client-php/docs-pages/examples/project-tasks.md:12: warning: Found unknown command `\getList'
-/home/travis/build/1CRM/1crm-api-client-php/docs-pages/examples/sort-leads.md:4: warning: Found unknown command `\APIClient'
-/home/travis/build/1CRM/1crm-api-client-php/docs-pages/examples/sort-leads.md:4: warning: Found unknown command `\Model'
-/home/travis/build/1CRM/1crm-api-client-php/docs-pages/examples/sort-leads.md:4: warning: Found unknown command `\getList'
-/home/travis/build/1CRM/1crm-api-client-php/docs-pages/lowlevel.md:14: warning: Found unknown command `\APIClient'
-/home/travis/build/1CRM/1crm-api-client-php/docs-pages/lowlevel.md:14: warning: Found unknown command `\Client'
-/home/travis/build/1CRM/1crm-api-client-php/docs-pages/lowlevel.md:14: warning: Found unknown command `\request'
+Generating d/home/travis/build/1CRM/1crm-api-client-php/docs-pages/examples.md:38: warning: unable to resolve reference to `ex-create-invoice' for \ref command
 /home/travis/build/1CRM/1crm-api-client-php/docs-pages/lowlevel.md:16: warning: Found unknown command `\Client'
-/home/travis/build/1CRM/1crm-api-client-php/docs-pages/lowlevel.md:131: warning: Found unknown command `\APIClient'
-/home/travis/build/1CRM/1crm-api-client-php/docs-pages/lowlevel.md:131: warning: Found unknown command `\Client'
-/home/travis/build/1CRM/1crm-api-client-php/docs-pages/lowlevel.md:131: warning: Found unknown command `\get'
-/home/travis/build/1CRM/1crm-api-client-php/docs-pages/lowlevel.md:173: warning: Found unknown command `\APIClient'
-/home/travis/build/1CRM/1crm-api-client-php/docs-pages/lowlevel.md:173: warning: Found unknown command `\Client'
-/home/travis/build/1CRM/1crm-api-client-php/docs-pages/lowlevel.md:197: warning: Found unknown command `\APIClient'
-/home/travis/build/1CRM/1crm-api-client-php/docs-pages/lowlevel.md:197: warning: Found unknown command `\Client'
-/home/travis/build/1CRM/1crm-api-client-php/docs-pages/lowlevel.md:197: warning: Found unknown command `\patch'
-/home/travis/build/1CRM/1crm-api-client-php/docs-pages/lowlevel.md:223: warning: Found unknown command `\APIClient'
-/home/travis/build/1CRM/1crm-api-client-php/docs-pages/lowlevel.md:223: warning: Found unknown command `\Client'
-/home/travis/build/1CRM/1crm-api-client-php/docs-pages/lowlevel.md:223: warning: Found unknown command `\delete'
 /home/travis/build/1CRM/1crm-api-client-php/src/APIClient/AuthorizationFlow.php:101: warning: Member initAuthCode($auto_redirect) (function) of class OneCRM::APIClient::AuthorizationFlow is not documented.
 /home/travis/build/1CRM/1crm-api-client-php/src/APIClient/AuthorizationFlow.php:115: warning: Member validateResponseState($response) (function) of class OneCRM::APIClient::AuthorizationFlow is not documented.
 /home/travis/build/1CRM/1crm-api-client-php/src/APIClient/AuthorizationFlow.php:121: warning: Member finalAuthCode($response) (function) of class OneCRM::APIClient::AuthorizationFlow is not documented.
@@ -221,26 +153,26 @@ Generating d/home/travis/build/1CRM/1crm-api-client-php/docs-pages/examples/add-
 /home/travis/build/1CRM/1crm-api-client-php/src/APIClient/AuthorizationFlow.php:11: warning: Member $options (variable) of class OneCRM::APIClient::AuthorizationFlow is not documented.
 /home/travis/build/1CRM/1crm-api-client-php/src/APIClient/Calendar.php:12: warning: Member __construct(Client $client) (function) of class OneCRM::APIClient::Calendar is not documented.
 /home/travis/build/1CRM/1crm-api-client-php/src/APIClient/Calendar.php:10: warning: Member $client (variable) of class OneCRM::APIClient::Calendar is not documented.
-/home/travis/build/1CRM/1crm-api-client-php/src/APIClient/Calendar.php:17: warning: The following parameters of OneCRM\APIClient\Calendar\events($start_date,$end_date, array $types=[]) are not documented:
+/home/travis/build/1CRM/1crm-api-client-php/src/APIClient/Calendar.php:22: warning: The following parameters of OneCRM\APIClient\Calendar\events($start_date,$end_date, array $types=[]) are not documented:
   parameter '$types'
 /home/travis/build/1CRM/1crm-api-client-php/src/APIClient/Client.php:10: warning: Member $url (variable) of class OneCRM::APIClient::Client is not documented.
 /home/travis/build/1CRM/1crm-api-client-php/src/APIClient/Client.php:11: warning: Member $auth (variable) of class OneCRM::APIClient::Client is not documented.
 /home/travis/build/1CRM/1crm-api-client-php/src/APIClient/Client.php:12: warning: Member $_calendar (variable) of class OneCRM::APIClient::Client is not documented.
 /home/travis/build/1CRM/1crm-api-client-php/src/APIClient/Client.php:13: warning: Member $_files (variable) of class OneCRM::APIClient::Client is not documented.
 /home/travis/build/1CRM/1crm-api-client-php/src/APIClient/Client.php:141: warning: argument '$query' of command @param is not found in the argument list of OneCRM\APIClient\Client::delete($endpoint,$query_params=[])
-/home/travis/build/1CRM/1crm-api-client-php/src/APIClient/Client.php:141: warning: The following parameters of OneCRM\APIClient\Client\delete($endpoint,$query_params=[]) are not documented:
+/home/travis/build/1CRM/1crm-api-client-php/src/APIClient/Client.php:150: warning: The following parameters of OneCRM\APIClient\Client\delete($endpoint,$query_params=[]) are not documented:
   parameter '$query_params'
 /home/travis/build/1CRM/1crm-api-client-php/src/APIClient/Client.php:126: warning: argument '$query' of command @param is not found in the argument list of OneCRM\APIClient\Client::get($endpoint,$query_params=[])
-/home/travis/build/1CRM/1crm-api-client-php/src/APIClient/Client.php:126: warning: The following parameters of OneCRM\APIClient\Client\get($endpoint,$query_params=[]) are not documented:
+/home/travis/build/1CRM/1crm-api-client-php/src/APIClient/Client.php:135: warning: The following parameters of OneCRM\APIClient\Client\get($endpoint,$query_params=[]) are not documented:
   parameter '$query_params'
 /home/travis/build/1CRM/1crm-api-client-php/src/APIClient/Client.php:94: warning: argument '$query' of command @param is not found in the argument list of OneCRM\APIClient\Client::patch($endpoint,$body,$query_params=[])
-/home/travis/build/1CRM/1crm-api-client-php/src/APIClient/Client.php:94: warning: The following parameters of OneCRM\APIClient\Client\patch($endpoint,$body,$query_params=[]) are not documented:
+/home/travis/build/1CRM/1crm-api-client-php/src/APIClient/Client.php:104: warning: The following parameters of OneCRM\APIClient\Client\patch($endpoint,$body,$query_params=[]) are not documented:
   parameter '$query_params'
 /home/travis/build/1CRM/1crm-api-client-php/src/APIClient/Client.php:78: warning: argument '$query' of command @param is not found in the argument list of OneCRM\APIClient\Client::post($endpoint,$body,$query_params=[])
-/home/travis/build/1CRM/1crm-api-client-php/src/APIClient/Client.php:78: warning: The following parameters of OneCRM\APIClient\Client\post($endpoint,$body,$query_params=[]) are not documented:
+/home/travis/build/1CRM/1crm-api-client-php/src/APIClient/Client.php:88: warning: The following parameters of OneCRM\APIClient\Client\post($endpoint,$body,$query_params=[]) are not documented:
   parameter '$query_params'
 /home/travis/build/1CRM/1crm-api-client-php/src/APIClient/Client.php:110: warning: argument '$query' of command @param is not found in the argument list of OneCRM\APIClient\Client::put($endpoint,$body,$query_params=[])
-/home/travis/build/1CRM/1crm-api-client-php/src/APIClient/Client.php:110: warning: The following parameters of OneCRM\APIClient\Client\put($endpoint,$body,$query_params=[]) are not documented:
+/home/travis/build/1CRM/1crm-api-client-php/src/APIClient/Client.php:120: warning: The following parameters of OneCRM\APIClient\Client\put($endpoint,$body,$query_params=[]) are not documented:
   parameter '$query_params'
 /home/travis/build/1CRM/1crm-api-client-php/src/APIClient/Client.php:41: warning: Found unknown command `\Client'
 /home/travis/build/1CRM/1crm-api-client-php/src/APIClient/Error.php:10: warning: Member $hint (variable) of class OneCRM::APIClient::Error is not documented.
@@ -248,7 +180,7 @@ Generating d/home/travis/build/1CRM/1crm-api-client-php/docs-pages/examples/add-
 /home/travis/build/1CRM/1crm-api-client-php/src/APIClient/Files.php:12: warning: Member __construct(Client $client) (function) of class OneCRM::APIClient::Files is not documented.
 /home/travis/build/1CRM/1crm-api-client-php/src/APIClient/Files.php:10: warning: Member $client (variable) of class OneCRM::APIClient::Files is not documented.
 /home/travis/build/1CRM/1crm-api-client-php/src/APIClient/Files.php:17: warning: argument 'content_type' of command @param is not found in the argument list of OneCRM\APIClient\Files::upload($res,$filename,$content_type='application/octet-stream')
-/home/travis/build/1CRM/1crm-api-client-php/src/APIClient/Files.php:17: warning: The following parameters of OneCRM\APIClient\Files\upload($res,$filename,$content_type='application/octet-stream') are not documented:
+/home/travis/build/1CRM/1crm-api-client-php/src/APIClient/Files.php:31: warning: The following parameters of OneCRM\APIClient\Files\upload($res,$filename,$content_type='application/octet-stream') are not documented:
   parameter '$content_type'
 /home/travis/build/1CRM/1crm-api-client-php/src/APIClient/ListResult.php:16: warning: Member __construct($client, $endpoint, $query, $result) (function) of class OneCRM::APIClient::ListResult is not documented.
 /home/travis/build/1CRM/1crm-api-client-php/src/APIClient/ListResult.php:11: warning: Member $client (variable) of class OneCRM::APIClient::ListResult is not documented.
@@ -266,7 +198,11 @@ Generating d/home/travis/build/1CRM/1crm-api-client-php/docs-pages/examples/add-
 /home/travis/build/1CRM/1crm-api-client-php/src/APIClient/Authentication/Basic.php:11: warning: Member $username (variable) of class OneCRM::APIClient::Authentication::Basic is not documented.
 /home/travis/build/1CRM/1crm-api-client-php/src/APIClient/Authentication/Basic.php:12: warning: Member $password (variable) of class OneCRM::APIClient::Authentication::Basic is not documented.
 /home/travis/build/1CRM/1crm-api-client-php/src/APIClient/Authentication/OAuth.php:12: warning: Member $token (variable) of class OneCRM::APIClient::Authentication::OAuth is not documented.
-ocs for page data-update...
+ocs for page data-record...
+Generating docs for page md_docs-pages_data_related...
+Generating docs for page data-related...
+Generating docs for page md_docs-pages_data_update...
+Generating docs for page data-update...
 Generating docs for page md_docs-pages_data...
 Generating docs for page Data...
 Generating docs for page md_docs-pages_examples_add-contact...
@@ -275,6 +211,9 @@ Generating docs for page md_docs-pages_examples_add-product...
 Generating docs for page ex-add-product...
 Generating docs for page md_docs-pages_examples_create-account...
 Generating docs for page ex-create-account...
+Generating docs for page md_docs-pages_examples_create-invoice...
+Generating docs for page ex-create-quote...
+Generating docs for page md_docs-pages_examples_create-quote...
 Generating docs for page md_docs-pages_examples_delete-note...
 Generating docs for page ex-delete-note...
 Generating docs for page md_docs-pages_examples_delete-related...
@@ -343,5 +282,6 @@ Generating file index...
 Generating file member index...
 Generating example index...
 finalizing index lists...
-lookup cache used 89/65536 hits=472 misses=93
+writing tag file...
+lookup cache used 87/65536 hits=484 misses=91
 finished...
