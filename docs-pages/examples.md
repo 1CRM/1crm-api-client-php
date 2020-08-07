@@ -31,3 +31,5 @@ any available model.
 \subpage ex-delete-related
 
 \subpage ex-quote-structure
+
+\subpage ex-create-quote
