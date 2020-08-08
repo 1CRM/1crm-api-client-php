@@ -1,4 +1,4 @@
-\page ex-create-quote Create an Invoice with Payment
+\page ex-create-invoice Create an Invoice with Payment
 
 This is a example of creating an Invoice, a Payment and link this payment with parent Invoice using 1CRM API.
 
