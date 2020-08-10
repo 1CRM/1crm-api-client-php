@@ -120,6 +120,10 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a8f9916a64f78f34650cfadc60c935d00"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a645f7cc311fd06fcafdec71eec69b18a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_one_c_r_m_1_1_a_p_i_client_1_1_model.html#a645f7cc311fd06fcafdec71eec69b18a">metadata</a> ()</td></tr>
 <tr class="separator:a645f7cc311fd06fcafdec71eec69b18a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae27a0f0b07bca0612fe7db901d7ee067"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_one_c_r_m_1_1_a_p_i_client_1_1_model.html#ae27a0f0b07bca0612fe7db901d7ee067">getAuditLogs</a> ($parent_id=null, $offset=0, $limit=0)</td></tr>
+<tr class="separator:ae27a0f0b07bca0612fe7db901d7ee067"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acf1b497a3b8a092ae6626b7b88ba3d95"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_one_c_r_m_1_1_a_p_i_client_1_1_model.html#acf1b497a3b8a092ae6626b7b88ba3d95">getReports</a> ($report_id=null, $offset=0, $limit=0)</td></tr>
+<tr class="separator:acf1b497a3b8a092ae6626b7b88ba3d95"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
@@ -302,6 +306,54 @@ Protected Attributes</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="ae27a0f0b07bca0612fe7db901d7ee067"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">OneCRM\APIClient\Model::getAuditLogs </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>$parent_id</em> = <code>null</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>$offset</em> = <code>0</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>$limit</em> = <code>0</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Get list of model audit logs.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramtype">string</td><td class="paramname">$parent_id</td><td>parent record ID </td></tr>
+    <tr><td class="paramtype">int</td><td class="paramname">$offset</td><td>Starting offset </td></tr>
+    <tr><td class="paramtype">int</td><td class="paramname">$limit</td><td>Maximum number of records to return</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="class_one_c_r_m_1_1_a_p_i_client_1_1_list_result.html">ListResult</a> </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="class_one_c_r_m_1_1_a_p_i_client_1_1_error.html">Error</a></td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a class="anchor" id="ac072f1b8f50847752315ff9e7b538269"></a>
 <div class="memitem">
 <div class="memproto">
@@ -405,6 +457,54 @@ Protected Attributes</h2></td></tr>
 </td></tr>
     <tr><td class="paramname">$offset</td><td>Starting offset </td></tr>
     <tr><td class="paramname">$limit</td><td>Maximum number of records to return </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="acf1b497a3b8a092ae6626b7b88ba3d95"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">OneCRM\APIClient\Model::getReports </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>$report_id</em> = <code>null</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>$offset</em> = <code>0</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>$limit</em> = <code>0</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Get list of reports.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramtype">string</td><td class="paramname">$report_id</td><td>report ID. If specified the method returns a list of archived runs </td></tr>
+    <tr><td class="paramtype">int</td><td class="paramname">$offset</td><td>Starting offset </td></tr>
+    <tr><td class="paramtype">int</td><td class="paramname">$limit</td><td>Maximum number of records to return</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="class_one_c_r_m_1_1_a_p_i_client_1_1_list_result.html">ListResult</a> </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="class_one_c_r_m_1_1_a_p_i_client_1_1_error.html">Error</a></td><td></td></tr>
   </table>
   </dd>
 </dl>
