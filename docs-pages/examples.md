@@ -37,3 +37,11 @@ any available model.
 \subpage ex-create-invoice
 
 \subpage ex-create-so
+
+\subpage ex-print-invoice
+
+\subpage ex-print-personal
+
+\subpage ex-get-audit
+
+\subpage ex-get-reports

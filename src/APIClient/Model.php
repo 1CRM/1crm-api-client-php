@@ -206,4 +206,45 @@ class Model {
         return $result;
     }
 
+	/**
+	 * Get list of model audit logs.
+	 *
+	 * @param string $parent_id parent record ID
+	 * @param int $offset Starting offset
+	 * @param int $limit Maximum number of records to return
+	 *
+	 * @return ListResult
+	 * @throws Error
+	 */
+	public function getAuditLogs($parent_id = null, $offset = 0, $limit = 0) {
+		$endpoint = '/audit/' . $this->model_name;
+		if ($parent_id)
+			$endpoint .= '/' . $parent_id;
+		$query = ['offset' => $offset];
+		if ($limit > 0)
+			$query['limit'] = $limit;
+		$result = $this->client->get($endpoint, $query);
+		return new ListResult($this->client, $endpoint, $query, $result);
+	}
+
+	/**
+	 * Get list of reports.
+	 *
+	 * @param string $report_id report ID. If specified the method returns a list of archived runs
+	 * @param int $offset Starting offset
+	 * @param int $limit Maximum number of records to return
+	 *
+	 * @return ListResult
+	 * @throws Error
+	 */
+	public function getReports($report_id = null, $offset = 0, $limit = 0) {
+		$endpoint = '/reports/' . $this->model_name;
+		if ($report_id)
+			$endpoint .= '/' . $report_id;
+		$query = ['offset' => $offset];
+		if ($limit > 0)
+			$query['limit'] = $limit;
+		$result = $this->client->get($endpoint, $query);
+		return new ListResult($this->client, $endpoint, $query, $result);
+	}
 }
