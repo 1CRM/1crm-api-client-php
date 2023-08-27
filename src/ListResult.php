@@ -1,6 +1,8 @@
 <?php
 
-namespace OneCRM;
+namespace OneCRM\APIClient;
+
+use Generator;
 
 /**
  * Represents result of API call returning a list of records,
@@ -8,36 +10,33 @@ namespace OneCRM;
  */
 class ListResult
 {
-    protected $client;
-    protected $endpoint;
-    protected $query;
-    protected $result;
-
-    public function __construct($client, $endpoint, $query, $result)
+    /**
+     * @param  array<string, mixed>  $query
+     * @param  array<string, mixed>  $result
+     */
+    public function __construct(protected Client $client, protected string $endpoint, protected array $query, protected array $result)
     {
-        $this->endpoint = $endpoint;
-        $this->query = $query;
-        $this->result = $result;
-        $this->client = $client;
+        //
     }
 
     /**
-     * Returns total number of results
+     * Returns total number of results.
      *
      * Model::getList() and Model::getRelated() return a limited number of records (no more than 200),
      * and a total number of results matching the request. You can use total number of results to decide
      * if you need to send additional requests to fetch more data.
-     *
      */
-    public function totalResults()
+    public function totalResults(): int
     {
         return $this->result['total_results'];
     }
 
     /**
-     * Returns the list of records returned by API call
+     * Returns the list of records returned by API call.
+     *
+     * @return array<string, mixed>
      */
-    public function getRecords()
+    public function getRecords(): array
     {
         return $this->result['records'];
     }
@@ -46,10 +45,10 @@ class ListResult
      * Returns a generator object used to iterate over all results in a foreach loop.
      * The generator will automatically send additional API requests as needed to fetch more data.
      */
-    public function generator()
+    public function generator(): Generator
     {
         $gen = new ListResultGenerator($this->client, $this->endpoint, $this->query, $this->result);
+
         return $gen->generate();
     }
-
 }

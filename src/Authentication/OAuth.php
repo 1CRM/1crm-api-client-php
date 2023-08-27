@@ -1,31 +1,27 @@
 <?php
 
-namespace OneCRM\Authentication;
+namespace OneCRM\APIClient\Authentication;
 
-use OneCRM\APIClient\Authentication\access;
+use OneCRM\APIClient;
 
 /**
  * OAuth2 authentication scheme
  */
-
-class OAuth implements \OneCRM\Authentication
+class OAuth implements APIClient\Authentication
 {
-    protected $token;
-
     /**
-     * @param $token access token
+     * @param  array<string, mixed>  $token access token
      */
-    public function __construct(array $token)
+    public function __construct(protected array $token)
     {
-        $this->token = $token;
+        //
     }
 
-    public function applyRequestOptions(array &$options)
+    public function applyRequestOptions(array &$options): void
     {
-        if (!isset($options['headers'])) {
+        if (! isset($options['headers'])) {
             $options['headers'] = [];
         }
-        $options['headers']['Authorization'] = 'Bearer ' . $this->token['access_token'];
+        $options['headers']['Authorization'] = 'Bearer '.$this->token['access_token'];
     }
-
 }

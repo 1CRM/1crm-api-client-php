@@ -1,30 +1,27 @@
 <?php
 
-namespace OneCRM;
+namespace OneCRM\APIClient;
+
+use Generator;
 
 /**
- * Generator class for ListResult
- *
+ * Generator class for ListResult.
  */
 class ListResultGenerator
 {
-    protected $client;
-    protected $endpoint;
-    protected $query;
-    protected $result;
-
-    public function __construct($client, $endpoint, $query, $result)
+    /**
+     * @param  array<string, mixed>  $query
+     * @param  array<string, mixed>  $result
+     */
+    public function __construct(protected Client $client, protected string $endpoint, protected array $query, protected array $result)
     {
-        $this->endpoint = $endpoint;
-        $this->query = $query;
-        $this->result = $result;
-        $this->client = $client;
+        //
     }
 
     /**
-     * Generator function used to iterate over all results in a foreach loop
+     * Generator function used to iterate over all results in a foreach loop.
      */
-    public function generate()
+    public function generate(): Generator
     {
         $query = $this->query;
         $currentPosition = $query['offset'];

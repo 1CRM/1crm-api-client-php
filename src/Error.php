@@ -1,22 +1,27 @@
 <?php
 
-namespace OneCRM;
+namespace OneCRM\APIClient;
+
+use Exception;
 
 /**
  * Represents an API error
  */
-class Error extends \Exception
+class Error extends Exception
 {
-    protected $hint;
-    protected $error_type;
+    protected ?string $hint;
+
+    protected ?string $error_type;
 
     /**
      * Creates an error object from API reply
+     *
+     * @param  array<string, mixed>|string  $response
      */
-    public static function fromAPIResponse($code, $response)
+    public static function fromAPIResponse(int $code, array|string $response): Error
     {
         if (is_array($response)) {
-            $message = "";
+            $message = '';
             $hint = null;
             $type = null;
             if (isset($response['message'])) {
@@ -31,10 +36,11 @@ class Error extends \Exception
             $error = new Error($message, $code);
             $error->error_type = $type;
             $error->hint = $hint;
+
             return $error;
-        } else {
-            return new Error((string)$response, $code);
         }
+
+        return new Error($response, $code);
     }
 
     /**
@@ -43,7 +49,7 @@ class Error extends \Exception
      * 1CRM REST API can return hint with an error to suggest a possible
      * fix.
      */
-    public function getHint()
+    public function getHint(): ?string
     {
         return $this->hint;
     }
@@ -51,7 +57,7 @@ class Error extends \Exception
     /**
      * Gets error type returned from 1CRM REST API
      */
-    public function getType()
+    public function getType(): ?string
     {
         return $this->error_type;
     }

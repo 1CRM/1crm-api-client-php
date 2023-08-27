@@ -1,50 +1,34 @@
 <?php
 
-namespace OneCRM;
-
-use OneCRM\APIClient\Always;
-use OneCRM\APIClient\Array;
-use OneCRM\APIClient\Associative;
-use OneCRM\APIClient\ID;
-use OneCRM\APIClient\If;
-use OneCRM\APIClient\Link;
-use OneCRM\APIClient\List;
-use OneCRM\APIClient\Maximum;
-use OneCRM\APIClient\New;
-use OneCRM\APIClient\Record;
-use OneCRM\APIClient\Related;
-use OneCRM\APIClient\Starting;
+namespace OneCRM\APIClient;
 
 /**
  * Used to work wit 1CRM data
  */
 class Model
 {
-    protected $client;
-    protected $model_name;
-
-    public function __construct(Client $client, $model_name)
+    public function __construct(protected Client $client, protected string $model_name)
     {
-        $this->client = $client;
-        $this->model_name = $model_name;
+        //
     }
 
     /**
      * Get list of records.
      *
-     * @param $options array with request options
+     * @param  array<string, mixed>  $options array with request options
      *      * `fields`: optional array with fields you want returned
      *      * `filters`: optional associative array with filters. Keys are filter names, values are filter values
      *      * `order`: optional sort order
      *      * `query_favorite`: optional boolean, if true, results will include `is_favorite` flag
      *      * `filter_text`: optional filter text, used for generic text search
-     * @param $offset Starting offset
-     * @param $limit Maximum number of records to return
+     * @param  int  $offset Starting offset
+     * @param  int  $limit Maximum number of records to return
      *
+     * @throws Error
      */
-    public function getList($options = [], $offset = 0, $limit = 0)
+    public function getList(array $options = [], int $offset = 0, int $limit = 0): ListResult
     {
-        $endpoint = '/data/' . $this->model_name;
+        $endpoint = '/data/'.$this->model_name;
         $query = [];
         if (isset($options['fields']) && is_array($options['fields'])) {
             $query['fields'] = $options['fields'];
@@ -55,7 +39,7 @@ class Model
         if (isset($options['order']) && is_string($options['order'])) {
             $query['order'] = $options['order'];
         }
-        if (!empty($options['query_favorite'])) {
+        if (! empty($options['query_favorite'])) {
             $query['query_favorite'] = 1;
         }
         if (isset($options['filter_text'])) {
@@ -66,26 +50,26 @@ class Model
             $query['limit'] = $limit;
         }
         $result = $this->client->get($endpoint, $query);
+
         return new ListResult($this->client, $endpoint, $query, $result);
     }
 
     /**
      * Get list of related records.
      *
-     * @param $id ID of parent record
-     * @param $link Link name
-     * @param $options array with request options
+     * @param  string  $id ID of parent record
+     * @param  string  $link Link name
+     * @param  array<string, mixed>  $options array with request options
      *      * `fields`: optional array with fields you want returned
      *      * `filters`: optional associative array with filters. Keys are filter names, values are filter values
      *      * `order`: optional sort order
      *      * `filter_text`: optional filter text, used for generic text search
-     * @param $offset Starting offset
-     * @param $limit Maximum number of records to return
-     *
+     * @param  int  $offset Starting offset
+     * @param  int  $limit Maximum number of records to return
      */
-    public function getRelated($id, $link, $options = [], $offset = 0, $limit = 0)
+    public function getRelated(string $id, string $link, array $options = [], int $offset = 0, int $limit = 0): ListResult
     {
-        $endpoint = '/data/' . $this->model_name . '/' . $id . '/' . $link;
+        $endpoint = '/data/'.$this->model_name.'/'.$id.'/'.$link;
         $query = [];
         if (isset($options['fields']) && is_array($options['fields'])) {
             $query['fields'] = $options['fields'];
@@ -104,12 +88,12 @@ class Model
             $query['limit'] = $limit;
         }
         $result = $this->client->get($endpoint, $query);
+
         return new ListResult($this->client, $endpoint, $query, $result);
     }
 
     /**
-     *
-     * Adds a related record
+     * Adds a related record.
      *
      * `$data` parameter can be in different forms:
      *      * string with related record ID. Specified related record will be added to parent record via specified link
@@ -125,13 +109,15 @@ class Model
      * ~~~~~~~~~~~~~
      *
      *
-     * @param $id ID of parent record
-     * @param $link Link name
-     * @param $data Related data
+     * @param  string  $id ID of parent record
+     * @param  string  $link Link name
+     * @param  array<string, mixed>|string  $data Related data
+     *
+     * @throws Error
      */
-    public function addRelated($id, $link, $data)
+    public function addRelated(string $id, string $link, array|string $data): string
     {
-        $endpoint = '/data/' . $this->model_name . '/' . $id . '/' . $link;
+        $endpoint = '/data/'.$this->model_name.'/'.$id.'/'.$link;
         $records = [];
         $records_with_data = [];
         if (is_array($data)) {
@@ -148,143 +134,153 @@ class Model
         }
         $body = ['records' => $records, 'records_with_data' => $records_with_data];
         $result = $this->client->post($endpoint, $body);
+
         return $result['result'];
     }
 
     /**
-     *
      * Removes relationship between records
      *
+     * @param  string  $id ID of parent record
+     * @param  string  $link Link name
+     * @param  string  $rel_id ID of related record to remove
      *
-     *
-     * @param $id ID of parent record
-     * @param $link Link name
-     * @param $rel_id ID of related record to remove
+     * @throws Error
      */
-    public function deleteRelated($id, $link, $rel_id)
+    public function deleteRelated(string $id, string $link, string $rel_id): string
     {
-        $endpoint = '/data/' . $this->model_name . '/' . $id . '/' . $link . '/' . $rel_id;
+        $endpoint = '/data/'.$this->model_name.'/'.$id.'/'.$link.'/'.$rel_id;
         $result = $this->client->delete($endpoint);
+
         return $result['result'];
     }
 
     /**
-     * Retrieves single record with specified ID
+     * Retrieves single record with specified ID.
      *
-     * @param $id Record ID
-     * @param $fields List of fields to fetch
+     * @param  string  $id Record ID
+     * @param  array<string>  $fields List of fields to fetch
+     * @return array<string, mixed>
+     *
+     * @throws Error
      */
-    public function get($id, array $fields = [])
+    public function get(string $id, array $fields = []): array
     {
-        $endpoint = '/data/' . $this->model_name . '/' . $id;
-        $query = ['fields' => $fields];
-        $result = $this->client->get($endpoint, $query);
+        $endpoint = '/data/'.$this->model_name.'/'.$id;
+        $result = $this->client->get($endpoint, ['fields' => $fields]);
+
         return $result['record'];
     }
 
     /**
-     * Creates a new record
+     * Creates a new record.
      *
-     * @param $data Associative array with record data. Keys are field names, values are field values.
+     * @param  array<string, mixed>  $data Associative array with record data. Keys are field names, values are field values.
+     * @return string|array<string, string> New record ID, or an array of them if there is more than one ID (e.g. when creating a linking record)
      *
-     * @return New record ID
+     * @throws Error
      */
-    public function create($data)
+    public function create(array $data): string|array
     {
-        $endpoint = '/data/' . $this->model_name;
+        $endpoint = '/data/'.$this->model_name;
         $body = ['data' => $data];
         $result = $this->client->post($endpoint, $body);
+
         return $result['id'];
     }
 
     /**
-     * Updates a record
+     * Updates a record.
      *
-     * @param $id Record ID
-     * @param $data Associative array with record data. Keys are field names, values are field values.
-     * @param $create If true, the record will be created if it does not exist
+     * @param  string  $id Record ID
+     * @param  array<string, mixed>  $data Associative array with record data. Keys are field names, values are field values.
+     * @param  bool  $create If true, the record will be created if it does not exist
      *
-     * @return Always true
+     * @throws Error
      */
-    public function update($id, $data, $create = false)
+    public function update(string $id, array $data, bool $create = false): string
     {
-        $endpoint = '/data/' . $this->model_name . '/' . $id;
+        $endpoint = '/data/'.$this->model_name.'/'.$id;
         $body = ['data' => $data, 'create' => $create];
         $result = $this->client->patch($endpoint, $body);
+
         return $result['result'];
     }
 
     /**
-     * Deletes a record
+     * Deletes a record.
      *
-     * @param $id Record ID
+     * @param  string  $id Record ID
+     * @return bool true if record was deleted
      *
-     * @return true if record was deleted
+     * @throws Error
      */
-    public function delete($id)
+    public function delete(string $id): bool
     {
-        $endpoint = '/data/' . $this->model_name . '/' . $id;
+        $endpoint = '/data/'.$this->model_name.'/'.$id;
         $result = $this->client->delete($endpoint);
+
         return $result['result'];
     }
 
     /**
-     * Retrieves fields and filters metadata
+     * Retrieves fields and filters metadata.
      *
-     * @return Array with metadata
+     * @return array<string, mixed> Array with metadata
+     *
+     * @throws Error
      */
-    public function metadata()
+    public function metadata(): array
     {
-        $endpoint = '/meta/fields/' . $this->model_name;
-        $result = $this->client->get($endpoint);
-        return $result;
+        return $this->client->get('/meta/fields/'.$this->model_name);
     }
 
     /**
      * Get list of model audit logs.
      *
-     * @param string $parent_id parent record ID
-     * @param int $offset Starting offset
-     * @param int $limit Maximum number of records to return
+     * @param  string|null  $parent_id parent record ID
+     * @param  int  $offset Starting offset
+     * @param  int  $limit Maximum number of records to return
      *
-     * @return ListResult
      * @throws Error
      */
-    public function getAuditLogs($parent_id = null, $offset = 0, $limit = 0)
+    public function getAuditLogs(string $parent_id = null, int $offset = 0, int $limit = 0): ListResult
     {
-        $endpoint = '/audit/' . $this->model_name;
+        $endpoint = '/audit/'.$this->model_name;
         if ($parent_id) {
-            $endpoint .= '/' . $parent_id;
+            $endpoint .= '/'.$parent_id;
         }
         $query = ['offset' => $offset];
         if ($limit > 0) {
             $query['limit'] = $limit;
         }
         $result = $this->client->get($endpoint, $query);
+
         return new ListResult($this->client, $endpoint, $query, $result);
     }
 
     /**
      * Get list of reports.
      *
-     * @param string $report_id report ID. If specified the method returns a list of archived runs
-     * @param int $offset Starting offset
-     * @param int $limit Maximum number of records to return
-     *
+     * @param  string|null  $report_id report ID. If specified the method returns a list of archived runs
+     * @param  int  $offset Starting offset
+     * @param  int  $limit Maximum number of records to return
      * @return ListResult
+     *
      * @throws Error
      */
-    public function getReports($report_id = null, $offset = 0, $limit = 0)
+    public function getReports(string $report_id = null, int $offset = 0, int $limit = 0)
     {
-        $endpoint = '/reports/' . $this->model_name;
+        $endpoint = '/reports/'.$this->model_name;
         if ($report_id) {
-            $endpoint .= '/' . $report_id;
+            $endpoint .= '/'.$report_id;
         }
         $query = ['offset' => $offset];
         if ($limit > 0) {
             $query['limit'] = $limit;
         }
         $result = $this->client->get($endpoint, $query);
+
         return new ListResult($this->client, $endpoint, $query, $result);
     }
 }

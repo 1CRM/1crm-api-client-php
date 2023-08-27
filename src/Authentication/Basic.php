@@ -1,28 +1,25 @@
 <?php
 
-namespace OneCRM\Authentication;
+namespace OneCRM\APIClient\Authentication;
+
+use OneCRM\APIClient;
 
 /**
- * %Basic authentication scheme
+ * Basic authentication scheme
  */
-class Basic implements \OneCRM\Authentication
+class Basic implements APIClient\Authentication
 {
-    protected $username;
-    protected $password;
-
     /**
      * @param $username 1CRM user name
      * @param $password User's password
      */
-    public function __construct($username, $password)
+    public function __construct(protected string $username, protected string $password)
     {
-        $this->username = $username;
-        $this->password = $password;
+        //
     }
 
-    public function applyRequestOptions(array &$options)
+    public function applyRequestOptions(array &$options): void
     {
         $options['auth'] = [$this->username, $this->password];
     }
-
 }
