@@ -1,6 +1,14 @@
 <?php
 
-namespace OneCRM\APIClient;
+namespace OneCRM;
+
+use OneCRM\APIClient\A;
+use OneCRM\APIClient\Array;
+use OneCRM\APIClient\content_type;
+use OneCRM\APIClient\Document;
+use OneCRM\APIClient\File;
+use OneCRM\APIClient\One;
+use OneCRM\APIClient\Temporary;
 
 /**
  * used to upload and download files

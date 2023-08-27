@@ -1,6 +1,6 @@
 <?php
 
-namespace OneCRM\APIClient;
+namespace OneCRM;
 
 /**
  * Generator class for ListResult

@@ -1,6 +1,15 @@
 <?php
 
-namespace OneCRM\APIClient;
+namespace OneCRM;
+
+use OneCRM\APIClient\API;
+use OneCRM\APIClient\Array;
+use OneCRM\APIClient\Decoded;
+use OneCRM\APIClient\HTTP;
+use OneCRM\APIClient\Instance;
+use OneCRM\APIClient\Optional;
+use OneCRM\APIClient\Request;
+use OneCRM\APIClient\URL;
 
 /**
  * API Client

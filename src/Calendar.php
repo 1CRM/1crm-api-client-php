@@ -1,6 +1,8 @@
 <?php
 
-namespace OneCRM\APIClient;
+namespace OneCRM;
+
+use OneCRM\APIClient\Dates;
 
 /**
  * Used to obtain information about caalendar events.

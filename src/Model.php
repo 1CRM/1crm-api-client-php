@@ -1,6 +1,19 @@
 <?php
 
-namespace OneCRM\APIClient;
+namespace OneCRM;
+
+use OneCRM\APIClient\Always;
+use OneCRM\APIClient\Array;
+use OneCRM\APIClient\Associative;
+use OneCRM\APIClient\ID;
+use OneCRM\APIClient\If;
+use OneCRM\APIClient\Link;
+use OneCRM\APIClient\List;
+use OneCRM\APIClient\Maximum;
+use OneCRM\APIClient\New;
+use OneCRM\APIClient\Record;
+use OneCRM\APIClient\Related;
+use OneCRM\APIClient\Starting;
 
 /**
  * Used to work wit 1CRM data

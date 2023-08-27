@@ -1,6 +1,6 @@
 <?php
 
-namespace OneCRM\APIClient;
+namespace OneCRM;
 
 /**
  * Represents an API error

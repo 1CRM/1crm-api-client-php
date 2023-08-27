@@ -1,6 +1,13 @@
 <?php
 
-namespace OneCRM\APIClient;
+namespace OneCRM;
+
+use OneCRM\APIClient\New;
+use OneCRM\APIClient\Normally;
+use OneCRM\APIClient\OAuth2;
+use OneCRM\APIClient\Params;
+use OneCRM\APIClient\Refresh;
+use OneCRM\APIClient\URL;
 
 /**
  * Implementation of OAUth2 flow

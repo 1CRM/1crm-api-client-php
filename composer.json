@@ -16,7 +16,7 @@
 		"email": "support@1crm.com"
 	},
 	"autoload": {
-        "psr-4": { "OneCRM\\": "src/"}
+        "psr-4": { "OneCRM\\APIClient\\": "src/"}
     },
 	"require": {
 		"guzzlehttp/guzzle": "~6.3"

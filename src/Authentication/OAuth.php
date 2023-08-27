@@ -1,13 +1,14 @@
 <?php
 
-namespace OneCRM\APIClient\Authentication;
+namespace OneCRM\Authentication;
 use OneCRM\APIClient;
+use OneCRM\APIClient\Authentication\access;
 
 /**
  * OAuth2 authentication scheme
  */
 
-class OAuth implements APIClient\Authentication {
+class OAuth implements \OneCRM\Authentication {
 
 	protected $token;
 

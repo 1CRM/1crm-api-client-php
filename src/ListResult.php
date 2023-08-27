@@ -1,6 +1,6 @@
 <?php
 
-namespace OneCRM\APIClient;
+namespace OneCRM;
 
 /**
  * Represents result of API call returning a list of records,

@@ -1,12 +1,12 @@
 <?php
 
-namespace OneCRM\APIClient\Authentication;
+namespace OneCRM\Authentication;
 use OneCRM\APIClient;
 
 /**
  * %Basic authentication scheme
  */
-class Basic implements APIClient\Authentication {
+class Basic implements \OneCRM\Authentication {
 	
 	protected $username;
 	protected $password;
