@@ -20,7 +20,7 @@ $client = new Client($_ENV['ONECRM_ENDPOINT'], $auth);
 //Call an API endpoint
 try {
     echo json_encode($client->me(), JSON_THROW_ON_ERROR | JSON_PRETTY_PRINT);
-} catch (JsonException $e) {
+} catch (ValueError $e) {
     echo 'Invalid JSON response: ', $e->getMessage();
 } catch (OneCRMError $e) {
     echo '1CRM error: ', $e->getMessage();

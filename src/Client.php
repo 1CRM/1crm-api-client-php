@@ -3,7 +3,7 @@
 namespace OneCRM\APIClient;
 
 use GuzzleHttp\Exception\GuzzleException;
-use JsonException;
+use ValueError;
 
 /**
  * API Client
@@ -62,7 +62,7 @@ class Client
                 try {
                     $json = json_decode((string) $body, true, 512, JSON_THROW_ON_ERROR);
                     throw Error::fromAPIResponse($status, $json);
-                } catch (JsonException) {
+                } catch (ValueError) {
                     throw new Error('Unexpected reply from server', 500);
                 }
             }
@@ -71,7 +71,7 @@ class Client
             }
             try {
                 $json = json_decode((string) $body, true, 512, JSON_THROW_ON_ERROR);
-            } catch (JsonException) {
+            } catch (ValueError) {
                 throw new Error('Unexpected reply from server', 500);
             }
 
@@ -203,6 +203,8 @@ class Client
 
     /**
      * Returns API server's public key.
+     *
+     * @throws Error
      */
     public function serverKey(): string
     {
@@ -212,9 +214,10 @@ class Client
     }
 
     /**
-     * Returns information server software version
+     * Returns information server software version.
      *
      * @return array<string, mixed>
+     * @throws Error
      */
     public function serverVersion(): array
     {

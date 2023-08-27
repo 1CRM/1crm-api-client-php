@@ -14,7 +14,7 @@ class AuthorizationFlow
      *      * `client_id`: API client ID. Required. Can be omitted if `ONECRM_CLIENT_ID` environment variable is set.
      *      * `client_secret`: API client secret. Required.  Can be omitted if `ONECRM_CLIENT_SECRET` environment variable is set.
      *      * `redirect_uri`: Redirect URI. Required for Authorization Code flow.  Can be omitted if `ONECRM_REDIRECT_URI` environment variable is set.
-     *      * `username`: 1CRM user name. Required for Resource Owner Password Credentials flow.  Can be omitted if `ONECRM_USERNAME` environment variable is set.
+     *      * `username`: 1CRM username. Required for Resource Owner Password Credentials flow.  Can be omitted if `ONECRM_USERNAME` environment variable is set.
      *      * `password`: 1CRM user password. Required for Resource Owner Password Credentials flow.  Can be omitted if `ONECRM_PASSWORD` environment variable is set.
      *      * `scope`: Authorization request scope. Optional, defaults to `profile`
      *      * `owner_type`: `user` or `contact`. Default value is `user`
@@ -134,7 +134,6 @@ class AuthorizationFlow
     protected function finalAuthCode(array $response): array
     {
         $this->validateResponseState($response);
-        $client = new Client($this->url);
         $body = [
             'grant_type' => 'authorization_code',
             'client_id' => $this->options['client_id'],
@@ -145,7 +144,7 @@ class AuthorizationFlow
         ];
         $endpoint = 'auth/'.$this->options['owner_type'].'/access_token';
 
-        return $client->post($endpoint, $body);
+        return (new Client($this->url))->post($endpoint, $body);
     }
 
     /**

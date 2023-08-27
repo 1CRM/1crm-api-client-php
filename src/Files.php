@@ -58,7 +58,7 @@ class Files
      *
      * @throws Error
      */
-    public function download(string $model, string $id, mixed $res = null)
+    public function download(string $model, string $id, mixed $res = null): mixed
     {
         $endpoint = '/files/download/'.$model.'/'.$id;
         $options = [

@@ -66,6 +66,8 @@ class Model
      *      * `filter_text`: optional filter text, used for generic text search
      * @param  int  $offset Starting offset
      * @param  int  $limit Maximum number of records to return
+     * @return ListResult
+     * @throws Error
      */
     public function getRelated(string $id, string $link, array $options = [], int $offset = 0, int $limit = 0): ListResult
     {
@@ -103,7 +105,7 @@ class Model
      * ~~~~~~~~~~~~~{.php}
      * //
      * $data = [
-     *      3d3e96d1-8d7c-acd6-e338-55b9b0cc5aae" => ["quantity" => 5]
+     *      "3d3e96d1-8d7c-acd6-e338-55b9b0cc5aae" => ["quantity" => 5]
      * ];
      * //
      * ~~~~~~~~~~~~~
@@ -269,7 +271,7 @@ class Model
      *
      * @throws Error
      */
-    public function getReports(string $report_id = null, int $offset = 0, int $limit = 0)
+    public function getReports(string $report_id = null, int $offset = 0, int $limit = 0): ListResult
     {
         $endpoint = '/reports/'.$this->model_name;
         if ($report_id) {
