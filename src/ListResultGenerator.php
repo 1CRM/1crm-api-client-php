@@ -4,16 +4,17 @@ namespace OneCRM;
 
 /**
  * Generator class for ListResult
- * 
+ *
  */
-class ListResultGenerator {
-
+class ListResultGenerator
+{
     protected $client;
     protected $endpoint;
     protected $query;
     protected $result;
 
-    public function __construct($client, $endpoint, $query, $result) {
+    public function __construct($client, $endpoint, $query, $result)
+    {
         $this->endpoint = $endpoint;
         $this->query = $query;
         $this->result = $result;
@@ -23,7 +24,8 @@ class ListResultGenerator {
     /**
      * Generator function used to iterate over all results in a foreach loop
      */
-    public function generate() {
+    public function generate()
+    {
         $query = $this->query;
         $currentPosition = $query['offset'];
         $result = $this->result;

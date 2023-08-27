@@ -12,15 +12,15 @@ use OneCRM\APIClient\URL;
 /**
  * Implementation of OAUth2 flow
  */
-class AuthorizationFlow {
-
+class AuthorizationFlow
+{
     protected $url;
     protected $options;
 
     /**
-     * 
+     *
      * Constructor.
-     * 
+     *
      * Flow parameters passed in $options depend on authorization flow used:
      *      * `client_id`: API client ID. Required. Can be omited if `ONECRM_CLIENT_ID` environment variable is set.
      *      * `client_secret`: API client secret. Required.  Can be omited if `ONECRM_CLIENT_SECRET` environment variable is set.
@@ -30,11 +30,12 @@ class AuthorizationFlow {
      *      * `scope`: Authorization request scope. Optional, defaults to `profile`
      *      * `owner_type`: `user` or `contact`. Default value is `user`
      *      * `state`: CSRF token. Optional
-     * 
+     *
      * @param $url URL of API entry point, including api.php, ex. https://demo.1crmcloud.com/api.php
      * @param $options Params used by OAuth2 flow
      */
-    public function __construct($url, array $options = []) {
+    public function __construct($url, array $options = [])
+    {
         $this->url = $url;
         $defaults = [
             'client_id' => isset($_ENV['ONECRM_CLIENT_ID']) ? $_ENV['ONECRM_CLIENT_ID'] : null,
@@ -56,9 +57,9 @@ class AuthorizationFlow {
 
     /**
      * Starts OAuth2 flow.
-     * 
+     *
      * Use this method to start authorization flow and obtain OAuth2 access token.
-     * 
+     *
      * Valid values for `$grant` parameters are:
      *      * `authorization_code`: starts %Authorization Code Grant flow
      *      * `password`: obtains an access token using Resource Owner Password Credentials Grant flow
@@ -69,10 +70,11 @@ class AuthorizationFlow {
      *  When `authorization_code` is used, this method returns an URI the user must visit to complete
      * the authorization flow. Additionally, you can pass `true` in `$auto_redirect` to automatically
      * send `Location:` header for redirect.
-     * 
+     *
      * @throws Error
      */
-    public function init($grant, $auto_redirect = false) {
+    public function init($grant, $auto_redirect = false)
+    {
         switch($grant) {
             case 'authorization_code':
                 return $this->initAuthCode($auto_redirect);
@@ -90,22 +92,25 @@ class AuthorizationFlow {
 
     /**
      * Finalizes Oauth2 %Authorization Code Grant flow
-     * 
+     *
      * This method must be called when user returns to `redirect_url` after granting
-     * access to the application. 
-     * 
+     * access to the application.
+     *
      * @param $response Normally, this can be omited to use parameters passed by 1CRM OAuth server via query string.
      * @return OAuth2 access token
      * @throws Error
-     * 
+     *
      */
-    public function finalize(array $response = null) {
-        if (!$response)
+    public function finalize(array $response = null)
+    {
+        if (!$response) {
             $response = $_GET;
+        }
         return $this->finalAuthCode($response);
     }
 
-    protected function initAuthCode($auto_redirect) {
+    protected function initAuthCode($auto_redirect)
+    {
         $url = $this->url . '/auth/' . $this->options['owner_type'] . '/authorize';
         $url .= '?' . http_build_query([
             'response_type' => 'code',
@@ -120,13 +125,15 @@ class AuthorizationFlow {
         return $url;
     }
 
-    protected function validateResponseState($response) {
-        if ( (isset($response['state']) ? $response['state'] : null) !== (isset($this->options['state']) ? $this->options['state'] : null) ) {
+    protected function validateResponseState($response)
+    {
+        if ((isset($response['state']) ? $response['state'] : null) !== (isset($this->options['state']) ? $this->options['state'] : null)) {
             throw new Error('Invalid state passed');
         }
     }
 
-    protected function finalAuthCode($response) {
+    protected function finalAuthCode($response)
+    {
         $this->validateResponseState($response);
         $client = new Client($this->url);
         $body = [
@@ -142,7 +149,8 @@ class AuthorizationFlow {
         return $result;
     }
 
-    protected function initResourceOwner() {
+    protected function initResourceOwner()
+    {
         $endpoint = 'auth/' . $this->options['owner_type'] . '/access_token';
         $body = [
             'grant_type' => 'password',
@@ -155,9 +163,10 @@ class AuthorizationFlow {
         $client = new Client($this->url);
         $result = $client->post($endpoint, $body);
         return $result;
-   }
+    }
 
-   protected function initClientCredentials() {
+    protected function initClientCredentials()
+    {
         $endpoint = 'auth/' . $this->options['owner_type'] . '/access_token';
         $body = [
             'grant_type' => 'client_credentials',
@@ -172,13 +181,14 @@ class AuthorizationFlow {
 
     /**
      * Refreshes expired access token
-     * 
+     *
      * @param $refreshToken Refresh token
-     * 
+     *
      * @return New access token
      * @throws Error
      */
-    public function refreshToken($refreshToken) {
+    public function refreshToken($refreshToken)
+    {
         $endpoint = 'auth/' . $this->options['owner_type'] . '/access_token';
         $body = [
             'grant_type' => 'refresh_token',
