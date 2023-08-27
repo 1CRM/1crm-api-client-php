@@ -3,7 +3,6 @@
 	"description" : "PHP library to access 1CRM REST API",
 	"keywords" : ["1crm", "crm",  "api",  "rest"],
 	"homepage" : "https://www.1crm.com/",
-	"version": "0.0.5",
 	"license" : "MIT",
 	"authors" : [
 		{
