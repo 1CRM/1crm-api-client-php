@@ -1,0 +1,9 @@
+name: PHPStan static analysis
+on: [push]
+jobs:
+  phpstan:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: php-actions/composer@v6
+      - uses: php-actions/phpstan@v3
