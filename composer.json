@@ -19,5 +19,8 @@
     },
 	"require": {
 		"guzzlehttp/guzzle": "~6.3"
+	},
+	"require-dev": {
+		"laravel/pint": "^1.11"
 	}
 }
