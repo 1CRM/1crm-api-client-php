@@ -20,6 +20,8 @@ class ListResultGenerator
 
     /**
      * Generator function used to iterate over all results in a foreach loop.
+     *
+     * @throws Error
      */
     public function generate(): Generator
     {
