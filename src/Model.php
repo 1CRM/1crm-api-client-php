@@ -30,21 +30,7 @@ class Model
     {
         $endpoint = '/data/'.$this->model_name;
         $query = [];
-        if (isset($options['fields']) && is_array($options['fields'])) {
-            $query['fields'] = $options['fields'];
-        }
-        if (isset($options['filters']) && is_array($options['filters'])) {
-            $query['filters'] = $options['filters'];
-        }
-        if (isset($options['order']) && is_string($options['order'])) {
-            $query['order'] = $options['order'];
-        }
-        if (! empty($options['query_favorite'])) {
-            $query['query_favorite'] = 1;
-        }
-        if (isset($options['filter_text'])) {
-            $query['filter_text'] = $options['filter_text'];
-        }
+        [$options, $query] = static::checkOptions($options, $query);
         $query['offset'] = $offset;
         if ($limit > 0) {
             $query['limit'] = $limit;
@@ -73,18 +59,7 @@ class Model
     {
         $endpoint = '/data/'.$this->model_name.'/'.$id.'/'.$link;
         $query = [];
-        if (isset($options['fields']) && is_array($options['fields'])) {
-            $query['fields'] = $options['fields'];
-        }
-        if (isset($options['filters']) && is_array($options['filters'])) {
-            $query['filters'] = $options['filters'];
-        }
-        if (isset($options['order']) && is_string($options['order'])) {
-            $query['order'] = $options['order'];
-        }
-        if (isset($options['filter_text'])) {
-            $query['filter_text'] = $options['filter_text'];
-        }
+        [$options, $query] = static::checkOptions($options, $query);
         $query['offset'] = $offset;
         if ($limit > 0) {
             $query['limit'] = $limit;
@@ -284,5 +259,32 @@ class Model
         $result = $this->client->get($endpoint, $query);
 
         return new ListResult($this->client, $endpoint, $query, $result);
+    }
+
+    /**
+     * Check the options that are used to build a query string.
+     *
+     * @param array<string, mixed> $options
+     * @param array<string, mixed> $query
+     * @return array<int, array<string, mixed>>
+     */
+    protected static function checkOptions(array $options, array $query): array
+    {
+        if (isset($options['fields']) && is_array($options['fields'])) {
+            $query['fields'] = $options['fields'];
+        }
+        if (isset($options['filters']) && is_array($options['filters'])) {
+            $query['filters'] = $options['filters'];
+        }
+        if (isset($options['order']) && is_string($options['order'])) {
+            $query['order'] = $options['order'];
+        }
+        if (!empty($options['query_favorite'])) {
+            $query['query_favorite'] = 1;
+        }
+        if (isset($options['filter_text'])) {
+            $query['filter_text'] = $options['filter_text'];
+        }
+        return [$options, $query];
     }
 }
