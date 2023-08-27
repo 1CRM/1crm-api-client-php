@@ -104,6 +104,7 @@ class AuthorizationFlow {
             'response_type' => 'code',
             'client_id' => $this->options['client_id'],
             'redirect_uri' => $this->options['redirect_uri'],
+            'scope' => $this->options['scope'],
             'state' => $this->options['state']
         ]);
         if ($auto_redirect) {
