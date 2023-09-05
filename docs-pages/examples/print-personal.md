@@ -13,7 +13,7 @@ try {
     $model = 'Contact';
     $contact_id = '8ccb3aaa-3bab-5bbc-4ca4-5c9b2502940f';
 
-    $body = $client->request("GET", "/printer/pdf/personal/{$model}/{$invoice_id}", $options);
+    $body = $client->request("GET", "/printer/pdf/personal/{$model}/{$contact_id}", $options);
 
     //Output PDF
     ob_get_clean();

@@ -1,24 +1,37 @@
 {
-	"name": "onecrm/api",
-	"description" : "PHP library to access 1CRM REST API",
-	"keywords" : ["1crm", "crm",  "api",  "rest"],
-	"homepage" : "https://www.1crm.com/",
-	"version": "0.0.5",
-	"license" : "MIT",
-	"authors" : [
-		{
-			"name": "Andrey Demenev",
-			"email": "andrey@1crm.com",
-			"role": "Developer"
-		}
-	],
-	"support" : {
-		"email": "support@1crm.com"
-	},
-	"autoload": {
-        "psr-4": { "OneCRM\\": "src/"}
-    },
-	"require": {
-		"guzzlehttp/guzzle": "~6.3"
-	}
+  "name": "onecrm/api",
+  "description": "PHP library to access 1CRM REST API",
+  "keywords": [
+    "1crm",
+    "crm",
+    "api",
+    "rest"
+  ],
+  "homepage": "https://www.1crm.com/",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Andrey Demenev",
+      "email": "andrey@1crm.com",
+      "role": "Developer"
+    }
+  ],
+  "support": {
+    "email": "support@1crm.com"
+  },
+  "autoload": {
+    "psr-4": {
+      "OneCRM\\APIClient\\": "src/"
+    }
+  },
+  "require": {
+    "php": "^8.0",
+    "guzzlehttp/guzzle": "~7.0"
+  },
+  "require-dev": {
+    "laravel/pint": "^1.11",
+    "phpstan/phpstan": "^1.10",
+    "roave/security-advisories": "dev-latest",
+    "vlucas/phpdotenv": "^5.5"
+  }
 }

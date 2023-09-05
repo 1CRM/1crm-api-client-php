@@ -28,13 +28,13 @@ data available. If you want to iterate over all results, and not a limited subse
 need to send multiple requests. For example if there are 500 total results, and you fetch
 the results in chunks of 100, you will need 5 requests:
 
-Request #     | $offset     | $limit 
-------------- | ------------| ------ 
-1             | 0           | 100
-2             | 100         | 100
-3             | 200         | 100
-4             | 300         | 100
-5             | 400         | 100
+| Request # | $offset | $limit |
+|-----------|---------|--------|
+| 1         | 0       | 100    |
+| 2         | 100     | 100    |
+| 3         | 200     | 100    |
+| 4         | 300     | 100    |
+| 5         | 400     | 100    |
 
 [ListResult](@ref OneCRM::APIClient::ListResult) provides a `generator()` method that returns
 a PHP generator for use in `foreach` loop. When iterating, it will send additional requests as
